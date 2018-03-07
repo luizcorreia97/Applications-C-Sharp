@@ -1,0 +1,5 @@
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Files\bin\Debug\Files.exe.config
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Files\bin\Debug\Files.exe
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Files\bin\Debug\Files.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Files\obj\Debug\Files.exe
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Files\obj\Debug\Files.pdb

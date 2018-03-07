@@ -1,0 +1,12 @@
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Database\bin\Debug\Database.exe.config
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Database\bin\Debug\Database.exe
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Database\bin\Debug\Database.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Database\obj\Debug\Database.exe
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Database\obj\Debug\Database.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\Database\bin\Debug\Database.exe.config
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\Database\obj\Debug\Database.exe
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\Database\obj\Debug\Database.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\Database\bin\Debug\Database.exe
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\Database\bin\Debug\Database.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
