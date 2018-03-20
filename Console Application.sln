@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Databa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication", "WindowsFormsApplication\WindowsFormsApplication.csproj", "{A19ABD94-071B-42C6-8AC3-59B38D47DC21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minhas_Classes", "Minhas_Classes\Minhas_Classes.csproj", "{D03A0E38-3419-4CB5-829D-8B2E60F490D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A19ABD94-071B-42C6-8AC3-59B38D47DC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A19ABD94-071B-42C6-8AC3-59B38D47DC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A19ABD94-071B-42C6-8AC3-59B38D47DC21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D03A0E38-3419-4CB5-829D-8B2E60F490D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D03A0E38-3419-4CB5-829D-8B2E60F490D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D03A0E38-3419-4CB5-829D-8B2E60F490D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D03A0E38-3419-4CB5-829D-8B2E60F490D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

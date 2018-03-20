@@ -1,0 +1,4 @@
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\Minhas_Classes\bin\Debug\Minhas_Classes.dll
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\Minhas_Classes\bin\Debug\Minhas_Classes.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\Minhas_Classes\obj\Debug\Minhas_Classes.dll
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\Minhas_Classes\obj\Debug\Minhas_Classes.pdb

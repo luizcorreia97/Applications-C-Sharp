@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Database
+namespace WindowsFormsApplication
 {
-    class Professor
+    public class Professor
     {
         // Atributos
         public int idProfessor { get; set; }
@@ -32,7 +32,7 @@ namespace Database
         // Método Alterar
         public void Alterar()
         {
-            string comando_sql = "update professor set nome = '" + this.nome + "', idade = "+ this.idade  +"' where idprofessor = " + this.idProfessor;
+            string comando_sql = "update professor set nome = '" + this.nome + "', idade = " + this.idade + ", sexo = '" + this.sexo + "' where idprofessor = " + this.idProfessor;
             SqlCommand comando = new SqlCommand(comando_sql, con);
             con.Open();
             comando.ExecuteNonQuery();
@@ -53,7 +53,7 @@ namespace Database
         public DataSet Buscar()
         {
             DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select * from professor order by idprofessor desc", con);
+            SqlCommand comando = new SqlCommand("select * from professor", con);
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
@@ -69,7 +69,8 @@ namespace Database
         }
 
         // Método Buscando da Procedure
-        public DataSet buscaProfessor() {
+        public DataSet buscaProfessor()
+        {
 
             DataSet ds = new DataSet();
             SqlCommand comando = new SqlCommand("busca_professor", con);
