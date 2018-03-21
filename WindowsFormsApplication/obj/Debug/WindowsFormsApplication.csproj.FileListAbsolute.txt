@@ -11,3 +11,4 @@ C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\WindowsF
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.FormCarregaDados.resources
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\WindowsFormsApplication\bin\Debug\Minhas_Classes.dll
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\WindowsFormsApplication\bin\Debug\Minhas_Classes.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\Console Application\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.Componentes.resources

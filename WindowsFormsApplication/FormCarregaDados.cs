@@ -24,7 +24,6 @@ namespace WindowsFormsApplication
             txtId.Text = "";
             txtNome.Text = "";
             txtIdade.Text = "";
-            txtSexo.Text = "";
             txtBuscaNome.Text = "";
         }
 
@@ -43,12 +42,12 @@ namespace WindowsFormsApplication
             txtId.Text = dgv.CurrentRow.Cells[0].Value.ToString();
             txtNome.Text = dgv.CurrentRow.Cells[1].Value.ToString();
             txtIdade.Text = dgv.CurrentRow.Cells[2].Value.ToString();
-            txtSexo.Text = dgv.CurrentRow.Cells[3].Value.ToString();
-            //cmbSexo.Text = dgv.CurrentRow.Cells[3].ToString();
+            cmbSexo.Text = dgv.CurrentRow.Cells[3].Value.ToString();
 
             prof.idProfessor = Convert.ToInt32(txtId.Text);
             prof.nome = txtNome.Text;
             prof.idade = Convert.ToInt32(txtIdade.Text);
+            prof.sexo = Convert.ToChar(cmbSexo.Text);
             
         }
         
@@ -61,8 +60,7 @@ namespace WindowsFormsApplication
 
                 prof.nome = txtNome.Text;
                 prof.idade = Convert.ToInt32(txtIdade.Text);
-                prof.sexo = Convert.ToChar(txtSexo.Text);
-                //prof.sexo = Convert.ToChar(cmbSexo.Text);
+                prof.sexo = Convert.ToChar(cmbSexo.Text);
                 prof.Salvar();
                 MessageBox.Show("Professor " + txtNome.Text + " Salvo com sucesso.");
             }
@@ -72,7 +70,7 @@ namespace WindowsFormsApplication
                 prof.idProfessor = Convert.ToInt32(txtId.Text);
                 prof.nome = txtNome.Text;
                 prof.idade = Convert.ToInt32(txtIdade.Text);
-                prof.sexo = Convert.ToChar(txtSexo.Text);
+                prof.sexo = Convert.ToChar(cmbSexo.Text);
                 prof.Alterar();
                 MessageBox.Show("Professor " + txtNome.Text + " Alterado com sucesso.");
             }
@@ -106,7 +104,7 @@ namespace WindowsFormsApplication
             prof.idProfessor = Convert.ToInt32(txtId.Text);
             prof.nome = txtNome.Text;
             prof.idade = Convert.ToInt32(txtIdade.Text);
-            prof.sexo = Convert.ToChar(txtSexo.Text);
+            prof.sexo = Convert.ToChar(cmbSexo.Text);
             prof.Alterar();
             dataGridView1.DataSource = prof.buscaProfessorNome(txtBuscaNome.Text).Tables[0];
             LimpaCampos();

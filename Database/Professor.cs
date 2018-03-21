@@ -32,7 +32,7 @@ namespace Database
         // Método Alterar
         public void Alterar()
         {
-            string comando_sql = "update professor set nome = '" + this.nome + "', idade = "+ this.idade  +"' where idprofessor = " + this.idProfessor;
+            string comando_sql = "update professor set nome = '" + this.nome + "', idade = " + this.idade + ", sexo = '" + this.sexo + "' where idprofessor = " + this.idProfessor;
             SqlCommand comando = new SqlCommand(comando_sql, con);
             con.Open();
             comando.ExecuteNonQuery();
