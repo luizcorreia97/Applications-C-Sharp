@@ -16,6 +16,16 @@ namespace WindowsFormsApplication
         public FormGerenciaUsuario()
         {
             InitializeComponent();
+
+            txtSenha.UseSystemPasswordChar = true;
+            txtSenha2.UseSystemPasswordChar = true;
+            //txtSenha.PasswordChar = '*';
+            txtSenha.MaxLength = 10;
+            txtSenha2.MaxLength = 10;
+            txtLogin.TextAlign = HorizontalAlignment.Center;
+            txtSenha.TextAlign = HorizontalAlignment.Center;
+            txtSenha2.TextAlign = HorizontalAlignment.Center;
+            txtLogin.CharacterCasing = CharacterCasing.Lower;
         }
 
         public FormGerenciaUsuario(string nome)

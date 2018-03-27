@@ -15,6 +15,31 @@ namespace WindowsFormsApplication
         public FormLogin()
         {
             InitializeComponent();
+            txtSenha.UseSystemPasswordChar = true;
+            //txtSenha.PasswordChar = '*';
+            txtSenha.MaxLength = 10;
+            txtLogin.TextAlign = HorizontalAlignment.Center;
+            txtSenha.TextAlign = HorizontalAlignment.Center;
+            txtLogin.CharacterCasing = CharacterCasing.Lower;
+
+            string partOfDay;
+            var hours = DateTime.Now.Hour;
+
+            if (hours > 16)
+            {
+                partOfDay = "Boa Noite";
+            }
+            else if (hours > 11)
+            {
+                partOfDay = "Boa Tarde";
+            }
+            else
+            {
+                partOfDay = "Bom Dia";
+            }
+
+            lblSaudacao.Text = partOfDay;
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -42,6 +67,11 @@ namespace WindowsFormsApplication
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblSaudacao_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
