@@ -19,7 +19,6 @@ namespace WindowsFormsApplication
 
         float num = 0;
         float result = 0;
-        float memoria = 0;
         private string op = "";
         bool vez = true;
         bool calcok = true;

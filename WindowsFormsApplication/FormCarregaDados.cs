@@ -29,15 +29,13 @@ namespace WindowsFormsApplication
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            Funcionario func = new Funcionario();
-            Professor prof = new Professor();
+            Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
             dataGridView1.DataSource = prof.buscaProfessorNome(txtBuscaNome.Text).Tables[0];
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
-            //MessageBox.Show(dgv.CurrentRow.Cells[3].Value.ToString());
 
             txtId.Text = dgv.CurrentRow.Cells[0].Value.ToString();
             txtNome.Text = dgv.CurrentRow.Cells[1].Value.ToString();
@@ -54,7 +52,7 @@ namespace WindowsFormsApplication
         private void btnSalvar_Click(object sender, EventArgs e)
         {
 
-            Professor prof = new Professor();
+            Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
 
             if (txtId.Text == "") {
 
@@ -100,7 +98,7 @@ namespace WindowsFormsApplication
         
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Professor prof = new Professor();
+            Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
             prof.idProfessor = Convert.ToInt32(txtId.Text);
             prof.nome = txtNome.Text;
             prof.idade = Convert.ToInt32(txtIdade.Text);
@@ -117,15 +115,13 @@ namespace WindowsFormsApplication
 
         private void txtBuscaNome_Leave(object sender, EventArgs e)
         {
-            Funcionario func = new Funcionario();
-            Professor prof = new Professor();
+            Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
             dataGridView1.DataSource = prof.buscaProfessorNome(txtBuscaNome.Text).Tables[0];
         }
 
         private void txtBuscaNome_Enter(object sender, EventArgs e)
         {
-            Funcionario func = new Funcionario();
-            Professor prof = new Professor();
+            Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
             dataGridView1.DataSource = prof.buscaProfessorNome(txtBuscaNome.Text).Tables[0];
         }
 

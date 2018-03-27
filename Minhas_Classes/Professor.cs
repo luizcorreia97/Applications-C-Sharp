@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApplication
+namespace Minhas_Classes
 {
     public class Professor
     {
@@ -53,7 +53,7 @@ namespace WindowsFormsApplication
         public DataSet Buscar()
         {
             DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select * from professor", con);
+            SqlCommand comando = new SqlCommand("select * from professor; select * from funcionario", con);
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;

@@ -26,7 +26,7 @@ namespace WindowsFormsApplication
 
         private void btnProfessor_Click(object sender, EventArgs e)
         {
-            Professor prof = new Professor();
+            Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
             cmbProfessor.DataSource = prof.Buscar().Tables[0];
             cmbProfessor.ValueMember = "idprofessor";
             cmbProfessor.DisplayMember = "nome";
