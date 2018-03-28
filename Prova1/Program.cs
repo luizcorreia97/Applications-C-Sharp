@@ -15,9 +15,11 @@ namespace Prova1
         [STAThread]
         static void Main()
         {
+            Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormPrincipal());
+
         }
     }
 }

@@ -42,7 +42,9 @@ namespace Prova1
             prof.idade = Convert.ToInt32(dgv.CurrentRow.Cells[2].Value.ToString());
             prof.sexo = Convert.ToChar(dgv.CurrentRow.Cells[3].Value.ToString());
 
-            this.Hide();
+            //MessageBox.Show("Parâmetros:" + prof.idProfessor + prof.nome + prof.idade + prof.sexo);
+
+            //this.Hide();
             FormProfessor formProfessor = new FormProfessor(prof.idProfessor, prof.nome, prof.idade, prof.sexo);
             //formPrincipal.Show();
             formProfessor.Show();

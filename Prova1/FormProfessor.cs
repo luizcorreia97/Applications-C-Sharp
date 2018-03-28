@@ -16,17 +16,16 @@ namespace WindowsFormsApplication
     {
         Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
 
+        
+
         public FormProfessor(int idProfessor, string nome, int idade, char sexo)
         {
             InitializeComponent();
-            prof.idProfessor = idProfessor;
-            prof.nome = nome;
-            prof.idade = idade;
-            prof.sexo = sexo;
+           
 
-            MessageBox.Show("Parâmetros:" + prof.idProfessor + prof.nome + prof.idade + prof.sexo);
+            //MessageBox.Show("Parâmetros:" + idProfessor + nome + idade + sexo);
         }
-
+        
         public void LimpaCampos() {
             txtId.Text = "";
             txtNome.Text = "";
