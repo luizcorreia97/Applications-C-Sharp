@@ -1,0 +1,10 @@
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\bin\Debug\Prova1.exe.config
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\bin\Debug\Prova1.exe
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\bin\Debug\Prova1.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\Prova1.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\WindowsFormsApplication.FormProfessor.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\Prova1.Properties.Resources.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\Prova1.csproj.GenerateResource.Cache
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\Prova1.exe
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\Prova1.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\Prova1.FormPrincipal.resources

@@ -13,6 +13,8 @@ namespace WindowsFormsApplication
 {
     public partial class FormGerenciaUsuario : Form
     {
+        string partOfDay;
+
         public FormGerenciaUsuario()
         {
             InitializeComponent();
@@ -32,7 +34,27 @@ namespace WindowsFormsApplication
         {
             InitializeComponent();
 
-            lblUsuario.Text = nome;
+            var hours = DateTime.Now.Hour;
+            //hours = 3;
+
+            if (hours > 16)
+            {
+                partOfDay = "Boa noite";
+            }
+            else if (hours > 0)
+            {
+                partOfDay = "Boa madrugada";
+            }
+            else if (hours > 11)
+            {
+                partOfDay = "Boa tarde";
+            }
+            else
+            {
+                partOfDay = "Bom dia";
+            }
+
+            lblUsuario.Text = partOfDay + " " + nome;
         }
 
         Minhas_Classes.Usuario usuario = new Minhas_Classes.Usuario();
