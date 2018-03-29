@@ -81,10 +81,10 @@ namespace Minhas_Classes
         }
 
         // Método Buscando da Procedure com Like no Nome do Professor
-        public DataSet buscaFuncionarioNome(string nome)
+        public DataSet buscaNomeFuncionario(string nome)
         {
             DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("busca_funcionario_nome", con);
+            SqlCommand comando = new SqlCommand("buscanomefuncionario", con);
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
             //caso tenha novos parâmetros só adiciona-los aqui.

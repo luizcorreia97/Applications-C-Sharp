@@ -2,19 +2,20 @@ use Facear
 
 go
 
-alter procedure BuscaUsuarioNome
+alter procedure BuscaNome
 (
-	@login varchar(50)
+	@nome varchar(50)
 ) as begin
 
 Select
-	idusuario
-	,login
-	,senha
+	idprofessor
+	,nome
+	,idade
+	,sexo
 From
-	Usuario
+	professor
 Where
-	login like @login+'%'
+	nome like @nome+'%'
 Order by
-	idUsuario desc
+	idprofessor desc
 end

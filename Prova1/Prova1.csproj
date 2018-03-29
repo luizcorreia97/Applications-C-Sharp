@@ -53,6 +53,18 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAluno.Designer.cs">
+      <DependentUpon>FormAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFuncionario.Designer.cs">
+      <DependentUpon>FormFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProfessor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +77,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAluno.resx">
+      <DependentUpon>FormAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFuncionario.resx">
+      <DependentUpon>FormFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProfessor.resx">
       <DependentUpon>FormProfessor.cs</DependentUpon>
