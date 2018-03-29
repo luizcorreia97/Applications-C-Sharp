@@ -68,6 +68,15 @@ namespace Minhas_Classes
             return qtd;
         }
 
+        // Método Mostrar Sequence ID
+        public int mostraID()
+        {
+            SqlCommand comando = new SqlCommand("select max(idprofessor)+1 from professor", con);
+            con.Open();
+            int qtd = (int)comando.ExecuteScalar();
+            return qtd;
+        }
+
         // Método Buscando da Procedure
         public DataSet buscaProfessor()
         {

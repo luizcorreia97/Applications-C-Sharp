@@ -16,53 +16,32 @@ namespace WindowsFormsApplication
     {
         Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
 
-        
-
-        public FormProfessor(int idProfessor, string nome, int idade, char sexo)
+        public FormProfessor()
         {
             InitializeComponent();
-           
-
-            //MessageBox.Show("Parâmetros:" + idProfessor + nome + idade + sexo);
-        }
-        
-        public void LimpaCampos() {
-            txtId.Text = "";
-            txtNome.Text = "";
-            txtIdade.Text = "";
         }
 
-        private void btn_buscar_Click(object sender, EventArgs e)
+        public FormProfessor(Professor prof)
         {
-            Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
-        }
+            InitializeComponent();
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView dgv = sender as DataGridView;
+            lblTitulo.Text = "Gerenciar Professor";
+            txtId.Text = Convert.ToInt32(prof.idProfessor).ToString();
+            txtNome.Text = prof.nome;
+            txtIdade.Text = Convert.ToInt32(prof.idade).ToString();
+            cmbSexo.Text = Convert.ToChar(prof.sexo).ToString();
 
-            txtId.Text = prof.idProfessor.ToString();
-            txtNome.Text = prof.nome.ToString();
-            txtIdade.Text = prof.idade.ToString();
-            cmbSexo.Text = prof.sexo.ToString();
-
-            prof.idProfessor = Convert.ToInt32(txtId);
-            prof.nome = txtNome.Text;
-            prof.idade = Convert.ToInt32(txtIdade.Text);
-            prof.sexo = Convert.ToChar(cmbSexo.Text);
-            
+            txtSeq.Text = prof.mostraID().ToString();
         }
         
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
-            Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
+            prof.nome = txtNome.Text;
+            prof.idade = Convert.ToInt32(txtIdade.Text);
+            prof.sexo = Convert.ToChar(cmbSexo.Text);
 
             if (txtId.Text == "") {
 
-                prof.nome = txtNome.Text;
-                prof.idade = Convert.ToInt32(txtIdade.Text);
-                prof.sexo = Convert.ToChar(cmbSexo.Text);
                 prof.Salvar();
                 MessageBox.Show("Professor " + txtNome.Text + " Salvo com sucesso.");
             }
@@ -70,55 +49,41 @@ namespace WindowsFormsApplication
             else {
 
                 prof.idProfessor = Convert.ToInt32(txtId.Text);
-                prof.nome = txtNome.Text;
-                prof.idade = Convert.ToInt32(txtIdade.Text);
-                prof.sexo = Convert.ToChar(cmbSexo.Text);
                 prof.Alterar();
                 MessageBox.Show("Professor " + txtNome.Text + " Alterado com sucesso.");
             }
-            
-            LimpaCampos();
-        }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Deseja apagar" + txtNome.Text,
-                      "kakakak", MessageBoxButtons.YesNo);
-            switch (dr)
-            {
-                case DialogResult.Yes:
-                    prof.Deletar();
-                    MessageBox.Show("Professor " + txtNome.Text + " Deletado.");
-                    break;
-                case DialogResult.No:
-                    MessageBox.Show("Professor " + txtNome.Text  + " Conversado.");
-                    break;
-            }
-            
-           LimpaCampos();
-        }
-        
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
-            prof.idProfessor = Convert.ToInt32(txtId.Text);
-            prof.nome = txtNome.Text;
-            prof.idade = Convert.ToInt32(txtIdade.Text);
-            prof.sexo = Convert.ToChar(cmbSexo.Text);
-            prof.Alterar();
-            LimpaCampos();
-        }
-
-        private void btnLimparCampos_Click(object sender, EventArgs e)
-        {
             this.Hide();
             FormPrincipal formPrincipal = new FormPrincipal();
             formPrincipal.Show();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnExcluir_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("Deseja realmente apagar '" + txtNome.Text + "' ?", "ATENÇÃO", MessageBoxButtons.YesNo);
 
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    prof.idProfessor = Convert.ToInt32(txtId.Text);
+                    prof.Deletar();
+                    MessageBox.Show("'" + txtNome.Text + "' Deletado com sucesso.");
+                    break;
+                case DialogResult.No:
+                    MessageBox.Show("'" + txtNome.Text  + "' Conversado com sucesso.");
+                    break;
+            }
+
+            this.Hide();
+            FormPrincipal formPrincipal = new FormPrincipal();
+            formPrincipal.Show();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormPrincipal formPrincipal = new FormPrincipal();
+            formPrincipal.Show();
         }
     }
 }

@@ -14,9 +14,9 @@ namespace Prova1
 {
     public partial class FormPrincipal : Form
     {
-        Professor prof = new Professor();
-        Aluno aluno = new Aluno();
-        Funcionario func = new Funcionario();
+        Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
+        Minhas_Classes.Aluno aluno = new Minhas_Classes.Aluno();
+        Minhas_Classes.Funcionario func = new Minhas_Classes.Funcionario();
 
         public FormPrincipal()
         {
@@ -29,7 +29,7 @@ namespace Prova1
         private void btnProfessor_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormProfessor formProfessor = new FormProfessor(prof.idProfessor, prof.nome, prof.idade, prof.sexo);
+            FormProfessor formProfessor = new FormProfessor();
             formProfessor.Show();
         }
 
@@ -42,14 +42,29 @@ namespace Prova1
             prof.idade = Convert.ToInt32(dgv.CurrentRow.Cells[2].Value.ToString());
             prof.sexo = Convert.ToChar(dgv.CurrentRow.Cells[3].Value.ToString());
 
-            //MessageBox.Show("Parâmetros:" + prof.idProfessor + prof.nome + prof.idade + prof.sexo);
-
-            //this.Hide();
-            FormProfessor formProfessor = new FormProfessor(prof.idProfessor, prof.nome, prof.idade, prof.sexo);
-            //formPrincipal.Show();
+            this.Hide();
+            FormProfessor formProfessor = new FormProfessor(prof);
             formProfessor.Show();
+        }
 
+        private void txtProfessor_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            gridProfessor.DataSource = prof.buscaProfessorNome(txtProfessor.Text).Tables[0];
+        }
 
+        private void txtProfessor_KeyDown(object sender, KeyEventArgs e)
+        {
+            gridProfessor.DataSource = prof.buscaProfessorNome(txtProfessor.Text).Tables[0];
+        }
+
+        private void txtProfessor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            gridProfessor.DataSource = prof.buscaProfessorNome(txtProfessor.Text).Tables[0];
+        }
+
+        private void txtProfessor_KeyUp(object sender, KeyEventArgs e)
+        {
+            gridProfessor.DataSource = prof.buscaProfessorNome(txtProfessor.Text).Tables[0];
         }
     }
 }
