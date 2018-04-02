@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Minhas_Classes
+namespace Prova1
 {
     public class Aluno
     {
@@ -53,7 +53,7 @@ namespace Minhas_Classes
         public DataSet Buscar()
         {
             DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select * from aluno", con);
+            SqlCommand comando = new SqlCommand("select * from aluno order by idaluno desc", con);
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;

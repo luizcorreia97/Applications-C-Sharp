@@ -1,5 +1,4 @@
-﻿using Minhas_Classes;
-using Prova1;
+﻿using Prova1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +13,7 @@ namespace WindowsFormsApplication
 {
     public partial class FormFuncionario : Form
     {
-        Minhas_Classes.Funcionario func = new Minhas_Classes.Funcionario();
+        Funcionario func = new Funcionario();
 
         public FormFuncionario()
         {

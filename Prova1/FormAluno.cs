@@ -1,5 +1,4 @@
-﻿using Minhas_Classes;
-using Prova1;
+﻿using Prova1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +13,7 @@ namespace WindowsFormsApplication
 {
     public partial class FormAluno : Form
     {
-        Minhas_Classes.Aluno aluno = new Minhas_Classes.Aluno();
+        Aluno aluno = new Aluno();
 
         public FormAluno()
         {

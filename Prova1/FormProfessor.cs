@@ -1,5 +1,4 @@
-﻿using Minhas_Classes;
-using Prova1;
+﻿using Prova1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +13,7 @@ namespace WindowsFormsApplication
 {
     public partial class FormProfessor : Form
     {
-        Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
+        Professor prof = new Professor();
 
         public FormProfessor()
         {

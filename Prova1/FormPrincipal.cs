@@ -1,5 +1,4 @@
-﻿using Minhas_Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,11 +13,19 @@ namespace Prova1
 {
     public partial class FormPrincipal : Form
     {
-        Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
-        Minhas_Classes.Aluno aluno = new Minhas_Classes.Aluno();
-        Minhas_Classes.Funcionario func = new Minhas_Classes.Funcionario();
+        Professor prof = new Professor();
+        Aluno aluno = new Aluno();
+        Funcionario func = new Funcionario();
 
         public FormPrincipal()
+        {
+            InitializeComponent();
+            gridProfessor.DataSource = prof.Buscar().Tables[0];
+            gridAluno.DataSource = aluno.Buscar().Tables[0];
+            gridFuncionario.DataSource = func.Buscar().Tables[0];
+        }
+
+        public FormPrincipal(string nome)
         {
             InitializeComponent();
             gridProfessor.DataSource = prof.Buscar().Tables[0];
