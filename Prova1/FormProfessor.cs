@@ -29,12 +29,9 @@ namespace WindowsFormsApplication
             txtNome.Text = prof.nome;
             txtIdade.Text = Convert.ToInt32(prof.idade).ToString();
             cmbSexo.Text = Convert.ToChar(prof.sexo).ToString();
-
-<<<<<<< HEAD
+            
             //txtSeq.Text = prof.mostraID().ToString();
-=======
             //txtSeq.Text = Convert.ToInt32(prof.mostraID()).ToString();
->>>>>>> d6b53267047bc1d039e4787657bbaa70ef84a7de
         }
         
         private void btnSalvar_Click(object sender, EventArgs e)

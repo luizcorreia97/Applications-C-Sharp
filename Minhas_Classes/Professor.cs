@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Prova1
+namespace Minhas_Classes
 {
     public class Professor
     {
