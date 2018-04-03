@@ -11,49 +11,45 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication
 {
-    public partial class FormProfessor : Form
+    public partial class FormFuncionario : Form
     {
-        Professor prof = new Professor();
+        Funcionario func = new Funcionario();
 
-        public FormProfessor()
+        public FormFuncionario()
         {
             InitializeComponent();
         }
 
-        public FormProfessor(Professor prof)
+        public FormFuncionario(Funcionario func)
         {
             InitializeComponent();
 
-            lblTitulo.Text = "Gerenciar Professor";
-            txtId.Text = Convert.ToInt32(prof.idProfessor).ToString();
-            txtNome.Text = prof.nome;
-            txtIdade.Text = Convert.ToInt32(prof.idade).ToString();
-            cmbSexo.Text = Convert.ToChar(prof.sexo).ToString();
+            lblTitulo.Text = "Gerenciar Funcionario";
+            txtId.Text = Convert.ToInt32(func.idFuncionario).ToString();
+            txtNome.Text = func.nome;
+            txtIdade.Text = Convert.ToInt32(func.idade).ToString();
+            cmbSexo.Text = Convert.ToChar(func.sexo).ToString();
 
-<<<<<<< HEAD
-            //txtSeq.Text = prof.mostraID().ToString();
-=======
-            //txtSeq.Text = Convert.ToInt32(prof.mostraID()).ToString();
->>>>>>> d6b53267047bc1d039e4787657bbaa70ef84a7de
+            //txtSeq.Text = Convert.ToInt32(func.mostraID()).ToString();
         }
         
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            prof.nome = txtNome.Text;
-            prof.idade = Convert.ToInt32(txtIdade.Text);
-            prof.sexo = Convert.ToChar(cmbSexo.Text);
+            func.nome = txtNome.Text;
+            func.idade = Convert.ToInt32(txtIdade.Text);
+            func.sexo = Convert.ToChar(cmbSexo.Text);
 
             if (txtId.Text == "") {
 
-                prof.Salvar();
-                MessageBox.Show("Professor " + txtNome.Text + " Salvo com sucesso.");
+                func.Salvar();
+                MessageBox.Show("Funcionario " + txtNome.Text + " Salvo com sucesso.");
             }
 
             else {
 
-                prof.idProfessor = Convert.ToInt32(txtId.Text);
-                prof.Alterar();
-                MessageBox.Show("Professor " + txtNome.Text + " Alterado com sucesso.");
+                func.idFuncionario = Convert.ToInt32(txtId.Text);
+                func.Alterar();
+                MessageBox.Show("Funcionario " + txtNome.Text + " Alterado com sucesso.");
             }
 
             this.Hide();
@@ -68,8 +64,8 @@ namespace WindowsFormsApplication
             switch (dr)
             {
                 case DialogResult.Yes:
-                    prof.idProfessor = Convert.ToInt32(txtId.Text);
-                    prof.Deletar();
+                    func.idFuncionario = Convert.ToInt32(txtId.Text);
+                    func.Deletar();
                     MessageBox.Show("'" + txtNome.Text + "' Deletado com sucesso.");
                     break;
                 case DialogResult.No:

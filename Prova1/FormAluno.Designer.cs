@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication
 {
-    partial class FormProfessor
+    partial class FormAluno
     {
         /// <summary>
         /// Required designer variable.

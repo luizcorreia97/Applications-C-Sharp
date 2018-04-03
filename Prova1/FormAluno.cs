@@ -11,49 +11,45 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication
 {
-    public partial class FormProfessor : Form
+    public partial class FormAluno : Form
     {
-        Professor prof = new Professor();
+        Aluno aluno = new Aluno();
 
-        public FormProfessor()
+        public FormAluno()
         {
             InitializeComponent();
         }
 
-        public FormProfessor(Professor prof)
+        public FormAluno(Aluno aluno)
         {
             InitializeComponent();
 
-            lblTitulo.Text = "Gerenciar Professor";
-            txtId.Text = Convert.ToInt32(prof.idProfessor).ToString();
-            txtNome.Text = prof.nome;
-            txtIdade.Text = Convert.ToInt32(prof.idade).ToString();
-            cmbSexo.Text = Convert.ToChar(prof.sexo).ToString();
+            lblTitulo.Text = "Gerenciar Aluno";
+            txtId.Text = Convert.ToInt32(aluno.idAluno).ToString();
+            txtNome.Text = aluno.nome;
+            txtIdade.Text = Convert.ToInt32(aluno.idade).ToString();
+            cmbSexo.Text = Convert.ToChar(aluno.sexo).ToString();
 
-<<<<<<< HEAD
-            //txtSeq.Text = prof.mostraID().ToString();
-=======
-            //txtSeq.Text = Convert.ToInt32(prof.mostraID()).ToString();
->>>>>>> d6b53267047bc1d039e4787657bbaa70ef84a7de
+            //txtSeq.Text = Convert.ToInt32(aluno.mostraID()).ToString();
         }
         
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            prof.nome = txtNome.Text;
-            prof.idade = Convert.ToInt32(txtIdade.Text);
-            prof.sexo = Convert.ToChar(cmbSexo.Text);
+            aluno.nome = txtNome.Text;
+            aluno.idade = Convert.ToInt32(txtIdade.Text);
+            aluno.sexo = Convert.ToChar(cmbSexo.Text);
 
             if (txtId.Text == "") {
 
-                prof.Salvar();
-                MessageBox.Show("Professor " + txtNome.Text + " Salvo com sucesso.");
+                aluno.Salvar();
+                MessageBox.Show("Aluno " + txtNome.Text + " Salvo com sucesso.");
             }
 
             else {
 
-                prof.idProfessor = Convert.ToInt32(txtId.Text);
-                prof.Alterar();
-                MessageBox.Show("Professor " + txtNome.Text + " Alterado com sucesso.");
+                aluno.idAluno = Convert.ToInt32(txtId.Text);
+                aluno.Alterar();
+                MessageBox.Show("Aluno " + txtNome.Text + " Alterado com sucesso.");
             }
 
             this.Hide();
@@ -68,8 +64,8 @@ namespace WindowsFormsApplication
             switch (dr)
             {
                 case DialogResult.Yes:
-                    prof.idProfessor = Convert.ToInt32(txtId.Text);
-                    prof.Deletar();
+                    aluno.idAluno = Convert.ToInt32(txtId.Text);
+                    aluno.Deletar();
                     MessageBox.Show("'" + txtNome.Text + "' Deletado com sucesso.");
                     break;
                 case DialogResult.No:

@@ -8,3 +8,6 @@ C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\Prova1.cspr
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\Prova1.exe
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\Prova1.pdb
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\Prova1.FormPrincipal.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\WindowsFormsApplication.FormAluno.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\WindowsFormsApplication.FormFuncionario.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Prova1\obj\Debug\WindowsFormsApplication.FormLogin.resources
