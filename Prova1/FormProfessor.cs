@@ -31,7 +31,7 @@ namespace WindowsFormsApplication
             txtIdade.Text = Convert.ToInt32(prof.idade).ToString();
             cmbSexo.Text = Convert.ToChar(prof.sexo).ToString();
 
-            txtSeq.Text = prof.mostraID().ToString();
+            //txtSeq.Text = prof.mostraID().ToString();
         }
         
         private void btnSalvar_Click(object sender, EventArgs e)
