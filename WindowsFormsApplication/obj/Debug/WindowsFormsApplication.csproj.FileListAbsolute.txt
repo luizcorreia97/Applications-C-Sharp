@@ -35,3 +35,4 @@ C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WindowsFormsApplication\obj\
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.Properties.Resources.resources
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.csproj.GenerateResource.Cache
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.ConsumirWebService.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.Correios.resources
