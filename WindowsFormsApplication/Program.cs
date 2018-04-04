@@ -16,7 +16,7 @@ namespace WindowsFormsApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Correios());
+            Application.Run(new MeuDataService());
         }
     }
 }

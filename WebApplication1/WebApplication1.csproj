@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConsultaCEP.asmx" />
+    <Content Include="MeuDataSet.asmx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -115,6 +116,10 @@
   <ItemGroup>
     <Compile Include="ConsultaCEP.asmx.cs">
       <DependentUpon>ConsultaCEP.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MeuDataSet.asmx.cs">
+      <DependentUpon>MeuDataSet.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

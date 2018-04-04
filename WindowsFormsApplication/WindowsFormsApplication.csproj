@@ -110,12 +110,23 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="MeuDataService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeuDataService.Designer.cs">
+      <DependentUpon>MeuDataService.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MeuDataSet\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\MeuWebService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -151,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeuDataService.resx">
+      <DependentUpon>MeuDataService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -303,6 +317,11 @@
     <None Include="Service References\ServiceReference1\WindowsFormsApplication.ServiceReference1.VerificaSeTodosObjetosCanceladosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Web References\MeuDataSet\MeuDataSet.wsdl" />
+    <None Include="Web References\MeuDataSet\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Web References\MeuWebService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -325,6 +344,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:60944/MeuDataSet.asmx%3fop=Buscar">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MeuDataSet\</RelPath>
+      <UpdateFromURL>http://localhost:60944/MeuDataSet.asmx%3fop=Buscar</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WindowsFormsApplication_MeuDataSet_MeuDataSet</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:60944/WebService1.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\MeuWebService\</RelPath>
@@ -354,6 +384,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\MeuDataSet\MeuDataSet.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
