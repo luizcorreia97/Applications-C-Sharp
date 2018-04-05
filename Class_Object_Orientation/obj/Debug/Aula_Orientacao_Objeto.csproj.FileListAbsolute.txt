@@ -4,3 +4,9 @@ C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Applicat
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Class_Object_Orientation\obj\Debug\Aula_Orientacao_Objeto.csprojResolveAssemblyReference.cache
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Class_Object_Orientation\obj\Debug\Class_Object_Orientation.exe
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Class_Object_Orientation\obj\Debug\Class_Object_Orientation.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Class_Object_Orientation\bin\Debug\Class_Object_Orientation.exe.config
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Class_Object_Orientation\bin\Debug\Class_Object_Orientation.exe
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Class_Object_Orientation\bin\Debug\Class_Object_Orientation.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Class_Object_Orientation\obj\Debug\Aula_Orientacao_Objeto.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Class_Object_Orientation\obj\Debug\Class_Object_Orientation.exe
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Class_Object_Orientation\obj\Debug\Class_Object_Orientation.pdb

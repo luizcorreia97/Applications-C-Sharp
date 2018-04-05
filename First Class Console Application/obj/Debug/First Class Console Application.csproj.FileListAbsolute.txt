@@ -4,3 +4,9 @@ C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Applicat
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\First Class Console Application\obj\Debug\First Class Console Application.csprojResolveAssemblyReference.cache
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\First Class Console Application\obj\Debug\First Class Console Application.exe
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\First Class Console Application\obj\Debug\First Class Console Application.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\First Class Console Application\bin\Debug\First Class Console Application.exe.config
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\First Class Console Application\bin\Debug\First Class Console Application.exe
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\First Class Console Application\bin\Debug\First Class Console Application.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\First Class Console Application\obj\Debug\First Class Console Application.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\First Class Console Application\obj\Debug\First Class Console Application.exe
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\First Class Console Application\obj\Debug\First Class Console Application.pdb

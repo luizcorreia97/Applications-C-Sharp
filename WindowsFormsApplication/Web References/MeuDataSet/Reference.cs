@@ -34,6 +34,10 @@ namespace WindowsFormsApplication.MeuDataSet {
         
         private System.Threading.SendOrPostCallback BuscarOperationCompleted;
         
+        private System.Threading.SendOrPostCallback buscaNomeAlunoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback testeOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -77,6 +81,12 @@ namespace WindowsFormsApplication.MeuDataSet {
         
         /// <remarks/>
         public event BuscarCompletedEventHandler BuscarCompleted;
+        
+        /// <remarks/>
+        public event buscaNomeAlunoCompletedEventHandler buscaNomeAlunoCompleted;
+        
+        /// <remarks/>
+        public event testeCompletedEventHandler testeCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -133,6 +143,62 @@ namespace WindowsFormsApplication.MeuDataSet {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/buscaNomeAluno", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet buscaNomeAluno(string nome) {
+            object[] results = this.Invoke("buscaNomeAluno", new object[] {
+                        nome});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void buscaNomeAlunoAsync(string nome) {
+            this.buscaNomeAlunoAsync(nome, null);
+        }
+        
+        /// <remarks/>
+        public void buscaNomeAlunoAsync(string nome, object userState) {
+            if ((this.buscaNomeAlunoOperationCompleted == null)) {
+                this.buscaNomeAlunoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnbuscaNomeAlunoOperationCompleted);
+            }
+            this.InvokeAsync("buscaNomeAluno", new object[] {
+                        nome}, this.buscaNomeAlunoOperationCompleted, userState);
+        }
+        
+        private void OnbuscaNomeAlunoOperationCompleted(object arg) {
+            if ((this.buscaNomeAlunoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.buscaNomeAlunoCompleted(this, new buscaNomeAlunoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/teste", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string teste() {
+            object[] results = this.Invoke("teste", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void testeAsync() {
+            this.testeAsync(null);
+        }
+        
+        /// <remarks/>
+        public void testeAsync(object userState) {
+            if ((this.testeOperationCompleted == null)) {
+                this.testeOperationCompleted = new System.Threading.SendOrPostCallback(this.OntesteOperationCompleted);
+            }
+            this.InvokeAsync("teste", new object[0], this.testeOperationCompleted, userState);
+        }
+        
+        private void OntesteOperationCompleted(object arg) {
+            if ((this.testeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.testeCompleted(this, new testeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -148,11 +214,6 @@ namespace WindowsFormsApplication.MeuDataSet {
                 return true;
             }
             return false;
-        }
-
-        internal object buscaNomeAluno(string text)
-        {
-            throw new NotImplementedException();
         }
     }
     
@@ -204,6 +265,58 @@ namespace WindowsFormsApplication.MeuDataSet {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void buscaNomeAlunoCompletedEventHandler(object sender, buscaNomeAlunoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class buscaNomeAlunoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal buscaNomeAlunoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void testeCompletedEventHandler(object sender, testeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class testeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal testeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }

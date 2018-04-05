@@ -23,15 +23,15 @@ namespace WindowsFormsApplication
             gridLista.DataSource = mds.Buscar().Tables[0];
         }
 
-        private void txtAluno_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            MeuDataSet.MeuDataSet mds = new MeuDataSet.MeuDataSet();
-            gridLista.DataSource = mds.buscaNomeAluno(txtAluno.Text);
-        }
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             this.gridLista.DataSource = null;
+        }
+
+        private void txtAluno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MeuDataSet.MeuDataSet mds = new MeuDataSet.MeuDataSet();
+            gridLista.DataSource = mds.buscaNomeAluno(txtAluno.Text).Tables[0];
         }
     }
 }

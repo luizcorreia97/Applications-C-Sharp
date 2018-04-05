@@ -3,3 +3,9 @@ C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Applicat
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Files\bin\Debug\Files.pdb
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Files\obj\Debug\Files.exe
 C:\Users\Luiz\Documents\Visual Studio 2015\Projects\First Class Console Application\Files\obj\Debug\Files.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Files\bin\Debug\Files.exe.config
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Files\bin\Debug\Files.exe
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Files\bin\Debug\Files.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Files\obj\Debug\Files.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Files\obj\Debug\Files.exe
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Files\obj\Debug\Files.pdb

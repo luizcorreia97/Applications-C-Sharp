@@ -29,6 +29,37 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="buscaNomeAluno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscaNomeAlunoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscaNomeAlunoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="teste">
+        <s:complexType />
+      </s:element>
+      <s:element name="testeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="testeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -43,6 +74,18 @@
   <wsdl:message name="BuscarSoapOut">
     <wsdl:part name="parameters" element="tns:BuscarResponse" />
   </wsdl:message>
+  <wsdl:message name="buscaNomeAlunoSoapIn">
+    <wsdl:part name="parameters" element="tns:buscaNomeAluno" />
+  </wsdl:message>
+  <wsdl:message name="buscaNomeAlunoSoapOut">
+    <wsdl:part name="parameters" element="tns:buscaNomeAlunoResponse" />
+  </wsdl:message>
+  <wsdl:message name="testeSoapIn">
+    <wsdl:part name="parameters" element="tns:teste" />
+  </wsdl:message>
+  <wsdl:message name="testeSoapOut">
+    <wsdl:part name="parameters" element="tns:testeResponse" />
+  </wsdl:message>
   <wsdl:portType name="MeuDataSetSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -51,6 +94,14 @@
     <wsdl:operation name="Buscar">
       <wsdl:input message="tns:BuscarSoapIn" />
       <wsdl:output message="tns:BuscarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscaNomeAluno">
+      <wsdl:input message="tns:buscaNomeAlunoSoapIn" />
+      <wsdl:output message="tns:buscaNomeAlunoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="teste">
+      <wsdl:input message="tns:testeSoapIn" />
+      <wsdl:output message="tns:testeSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MeuDataSetSoap" type="tns:MeuDataSetSoap">
@@ -73,6 +124,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="buscaNomeAluno">
+      <soap:operation soapAction="http://tempuri.org/buscaNomeAluno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="teste">
+      <soap:operation soapAction="http://tempuri.org/teste" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="MeuDataSetSoap12" type="tns:MeuDataSetSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -87,6 +156,24 @@
     </wsdl:operation>
     <wsdl:operation name="Buscar">
       <soap12:operation soapAction="http://tempuri.org/Buscar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscaNomeAluno">
+      <soap12:operation soapAction="http://tempuri.org/buscaNomeAluno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="teste">
+      <soap12:operation soapAction="http://tempuri.org/teste" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

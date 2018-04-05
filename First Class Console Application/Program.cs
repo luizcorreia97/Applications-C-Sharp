@@ -12,7 +12,6 @@ namespace First_Class_ConsoleApplication
         {
             int idade;
             string nome;
-            decimal media;
 
             Console.Write("Olá mundo!!!");
 

@@ -52,5 +52,11 @@ namespace WebApplication1
             da.Fill(ds);
             return ds;
         }
+
+        [WebMethod]
+        public string teste()
+        {
+            return "ola mundo";
+        }
     }
 }
