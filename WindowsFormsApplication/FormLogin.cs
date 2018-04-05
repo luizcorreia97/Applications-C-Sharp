@@ -26,6 +26,7 @@ namespace WindowsFormsApplication
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Minhas_Classes.Usuario usr = new Minhas_Classes.Usuario();
+            
             DataSet dados = new DataSet();
 
             dados = usr.verificaUsuario(txtLogin.Text, txtSenha.Text);

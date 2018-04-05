@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Minhas_Classes
+namespace Urna
 {
     public class Urna
     {
