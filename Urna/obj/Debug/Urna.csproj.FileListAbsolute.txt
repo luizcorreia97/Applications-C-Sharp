@@ -2,9 +2,9 @@ C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\bin\Debug\Urna.exe.conf
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\bin\Debug\Urna.exe
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\bin\Debug\Urna.pdb
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.csprojResolveAssemblyReference.cache
-C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.Form1.resources
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.Properties.Resources.resources
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.csproj.GenerateResource.Cache
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.exe
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.pdb
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.FormLogin.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.Principal.resources

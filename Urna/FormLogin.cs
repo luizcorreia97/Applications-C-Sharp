@@ -15,7 +15,7 @@ namespace Urna
         public FormLogin()
         {
             InitializeComponent();
-            txtCpf.UseSystemPasswordChar = true;
+            //txtCpf.UseSystemPasswordChar = true;
             //txtSenha.PasswordChar = '*';
             txtCpf.MaxLength = 11;
             txtCpf.TextAlign = HorizontalAlignment.Center;
@@ -29,20 +29,23 @@ namespace Urna
 
             dados = eleicao.verificaEleitor(txtCpf.Text);
 
-            if (dados.Tables[0].Rows.Count == 0)
+            if (dados.Tables[0].Rows.Count != 0)
             {
-                MessageBox.Show("Login Incorreto!");
+                MessageBox.Show("CPF eleitor já votou!");
                 txtCpf.Text = null;
                 txtCpf.Focus();
             }
             else
             {
                 this.Hide();
-                //FormPrincipal formPrincipal = new FormPrincipal();
-                //formPrincipal.Show();
-                Form1 form = new Form1();
+                Principal form = new Principal();
                 form.Show();
             }
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

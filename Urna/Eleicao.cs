@@ -12,7 +12,9 @@ namespace Urna
     {
         // Atributos
         public string cpf { get; set; }
-        public int candidato { get; set; }
+        public string candidato { get; set; }
+        public int numero { get; set; }
+        public string partido { get; set; }
 
         // String de conexão com o banco
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=Facear;Integrated Security=True");
@@ -32,6 +34,16 @@ namespace Urna
         {
             DataSet ds = new DataSet();
             SqlCommand comando = new SqlCommand("select candidato, count(*) as voto from urna group by candidato", con);
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+            da.Fill(ds);
+            return ds;
+        }
+
+        // Método Buscar
+        public DataSet BuscaCandidato(int busca)
+        {
+            DataSet ds = new DataSet();
+            SqlCommand comando = new SqlCommand("select candidato, partido from urna where numero = " + busca, con);
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
