@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication
+﻿namespace Urna
 {
     partial class FormLogin
     {
@@ -64,7 +64,7 @@
             this.btnEntrar.TabIndex = 4;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
-            this.btnEntrar.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // btnSair
             // 
@@ -76,7 +76,6 @@
             this.btnSair.TabIndex = 5;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // lblSaudacao
             // 
@@ -87,7 +86,6 @@
             this.lblSaudacao.Size = new System.Drawing.Size(31, 29);
             this.lblSaudacao.TabIndex = 6;
             this.lblSaudacao.Text = "   ";
-            this.lblSaudacao.Click += new System.EventHandler(this.lblSaudacao_Click);
             // 
             // FormLogin
             // 

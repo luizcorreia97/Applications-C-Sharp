@@ -7,3 +7,4 @@ C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.Properti
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.csproj.GenerateResource.Cache
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.exe
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.FormLogin.resources

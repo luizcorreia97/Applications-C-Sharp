@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Urna
 {
-    public class Urna
+    public class Eleicao
     {
         // Atributos
         public string cpf { get; set; }
