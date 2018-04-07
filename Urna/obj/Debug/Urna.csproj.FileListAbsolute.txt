@@ -8,3 +8,4 @@ C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.exe
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.pdb
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.FormLogin.resources
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.Principal.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Urna\obj\Debug\Urna.FormApuração.resources

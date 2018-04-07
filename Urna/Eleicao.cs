@@ -22,18 +22,18 @@ namespace Urna
         // Método Salvar
         public void Salvar()
         {
-            string comando_sql = "insert into urna values ('" + this.cpf + "', " + this.candidato + "')";
+            string comando_sql = "insert into voto (cpfeleitor, idcandidato) values ('" + this.cpf + "', '" + this.numero + "')";
             SqlCommand comando = new SqlCommand(comando_sql, con);
             con.Open();
             comando.ExecuteNonQuery();
             con.Close();
         }
 
-        // Método Buscar
+        // Método Listar
         public DataSet Listar()
         {
             DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select candidato, count(*) as voto from urna group by candidato", con);
+            SqlCommand comando = new SqlCommand("select row_number() over(order by count(v.idcandidato) desc, nome asc) as ranking, case when c.nome <> 'Branco' and c.nome <> 'Nulo' then concat(c.nome, ' (',c.id,' - ',c.partido,')') else c.nome end as candidato, count(v.idcandidato) as votos from candidato c left join voto v on (v.idcandidato = c.numero) group by c.nome, c.partido, c.id", con);
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
@@ -43,17 +43,26 @@ namespace Urna
         public DataSet BuscaCandidato(int busca)
         {
             DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select candidato, partido from urna where numero = " + busca, con);
+            SqlCommand comando = new SqlCommand("select nome, partido from candidato where numero = " + busca, con);
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
+        }
+
+        // Método Totalizador de Votos
+        public int totalVotos()
+        {
+            SqlCommand comando = new SqlCommand("select count(*) from voto", con);
+            con.Open();
+            int qtd = (int)comando.ExecuteScalar();
+            return qtd;
         }
 
         // Método Verificar Eleitor Sistema
         public DataSet verificaEleitor(string cpf)
         {
             DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select * from urna where cpf = '" + cpf + "'", con);
+            SqlCommand comando = new SqlCommand("select * from voto where cpfeleitor = '" + cpf + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
