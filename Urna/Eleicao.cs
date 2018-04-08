@@ -43,7 +43,7 @@ namespace Urna
         public DataSet BuscaCandidato(int busca)
         {
             DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select nome, partido from candidato where numero = " + busca, con);
+            SqlCommand comando = new SqlCommand("select nome, partido, foto, vice, fotovice from candidato where numero = " + busca, con);
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
@@ -63,6 +63,19 @@ namespace Urna
         {
             DataSet ds = new DataSet();
             SqlCommand comando = new SqlCommand("select * from voto where cpfeleitor = '" + cpf + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+            da.Fill(ds);
+            return ds;
+        }
+
+        // Método Buscando da Procedure com Like no Nome do Aluno
+        public DataSet buscaNomeApuracao(string busca)
+        {
+            DataSet ds = new DataSet();
+            SqlCommand comando = new SqlCommand("buscanomeapuracao", con);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Add("@busca", SqlDbType.VarChar).Value = busca;
+            //caso tenha novos parâmetros só adiciona-los aqui.
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;

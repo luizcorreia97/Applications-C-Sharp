@@ -99,8 +99,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\bolsonaro.jpg" />
-    <Content Include="Properties\bolsonaro2018.jpg" />
+    <Content Include="Properties\justica eleitoral.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

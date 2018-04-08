@@ -58,6 +58,7 @@ namespace Urna
         //Lista Apuração
         private void btnApuracao_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormApuração formApuracao = new FormApuração();
             formApuracao.Show();
         }
@@ -105,6 +106,15 @@ namespace Urna
             else
             {
                 return false;
+            }
+        }
+
+        private void txtCpf_Leave(object sender, EventArgs e)
+        {
+            if (txtCpf.Text == "09788163904")
+            {
+                btnApuracao.Enabled = true;
+                btnEntrar.Enabled = false;
             }
         }
     }

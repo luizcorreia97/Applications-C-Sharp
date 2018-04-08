@@ -31,16 +31,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.lblSaudacao = new System.Windows.Forms.Label();
             this.btnApuracao = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label2.Location = new System.Drawing.Point(115, 118);
+            this.label2.Location = new System.Drawing.Point(114, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 36);
             this.label2.TabIndex = 3;
@@ -49,16 +48,17 @@
             // txtCpf
             // 
             this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtCpf.Location = new System.Drawing.Point(55, 170);
+            this.txtCpf.Location = new System.Drawing.Point(54, 78);
             this.txtCpf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(213, 34);
             this.txtCpf.TabIndex = 2;
+            this.txtCpf.Leave += new System.EventHandler(this.txtCpf_Leave);
             // 
             // btnEntrar
             // 
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnEntrar.Location = new System.Drawing.Point(175, 239);
+            this.btnEntrar.Location = new System.Drawing.Point(174, 147);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(93, 44);
@@ -67,10 +67,23 @@
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
+            // btnApuracao
+            // 
+            this.btnApuracao.Enabled = false;
+            this.btnApuracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnApuracao.Location = new System.Drawing.Point(54, 214);
+            this.btnApuracao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnApuracao.Name = "btnApuracao";
+            this.btnApuracao.Size = new System.Drawing.Size(213, 30);
+            this.btnApuracao.TabIndex = 24;
+            this.btnApuracao.Text = "APURAÇÃO DOS VOTOS";
+            this.btnApuracao.UseVisualStyleBackColor = true;
+            this.btnApuracao.Click += new System.EventHandler(this.btnApuracao_Click);
+            // 
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnSair.Location = new System.Drawing.Point(55, 239);
+            this.btnSair.Location = new System.Drawing.Point(54, 147);
             this.btnSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(95, 44);
@@ -79,34 +92,12 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // lblSaudacao
-            // 
-            this.lblSaudacao.AutoSize = true;
-            this.lblSaudacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.lblSaudacao.Location = new System.Drawing.Point(100, 11);
-            this.lblSaudacao.Name = "lblSaudacao";
-            this.lblSaudacao.Size = new System.Drawing.Size(31, 29);
-            this.lblSaudacao.TabIndex = 6;
-            this.lblSaudacao.Text = "   ";
-            // 
-            // btnApuracao
-            // 
-            this.btnApuracao.Location = new System.Drawing.Point(188, 49);
-            this.btnApuracao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnApuracao.Name = "btnApuracao";
-            this.btnApuracao.Size = new System.Drawing.Size(108, 30);
-            this.btnApuracao.TabIndex = 24;
-            this.btnApuracao.Text = "Apuração";
-            this.btnApuracao.UseVisualStyleBackColor = true;
-            this.btnApuracao.Click += new System.EventHandler(this.btnApuracao_Click);
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 340);
+            this.ClientSize = new System.Drawing.Size(323, 276);
             this.Controls.Add(this.btnApuracao);
-            this.Controls.Add(this.lblSaudacao);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.label2);
@@ -114,7 +105,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormLogin";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,8 +115,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Button btnEntrar;
-        private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Label lblSaudacao;
         private System.Windows.Forms.Button btnApuracao;
+        private System.Windows.Forms.Button btnSair;
     }
 }

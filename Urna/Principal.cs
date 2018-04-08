@@ -15,20 +15,18 @@ namespace Urna
         public Principal()
         {
             InitializeComponent();
-            txtNumero1.MaxLength = 2;
         }
 
-        public Principal(string text)
+        public Principal(string cpf)
         {
             InitializeComponent();
-            txtNumero1.MaxLength = 2;
-            eleicao.cpf = text;
+            eleicao.cpf = cpf;
         }
 
         Eleicao eleicao = new Eleicao();
 
         private void btn1_Click(object sender, EventArgs e)
-        {   
+        {
             validaCampo("1");
         }
 
@@ -107,6 +105,7 @@ namespace Urna
             {
                 txtNumero1.Text = num;
                 btnCorrige.Enabled = true;
+                btnBranco.Enabled = false;
             }
             else
             {
@@ -133,19 +132,23 @@ namespace Urna
             {
                 foreach (DataRow row in dados.Tables[0].Rows)
                 {
-                    txtCandidato.Text = (row["nome"] + " ");
-                    txtPartido.Text = (row["partido"] + " ");
+                    picturePresidente.ImageLocation = (row["foto"] + " ");
+                    pictureVice.ImageLocation = (row["fotovice"] + " ");
+                    lblMostraCandidato.Text = (row["nome"] + " ");
+                    lblMostraPartido.Text = (row["partido"] + " ");
+                    lblMostraVice.Text = (row["vice"] + " ");
                 }
 
                 eleicao.numero = Convert.ToInt16(txtNumero1.Text + txtNumero2.Text);
-                eleicao.candidato = txtCandidato.Text;
-                eleicao.partido = txtPartido.Text;
+                eleicao.candidato = lblMostraCandidato.Text;
+                eleicao.partido = lblMostraPartido.Text;
             }
             else
             {
                 eleicao.numero = 2;
                 eleicao.candidato = "Nulo";
                 popUp("Aperte o botão confirma!", "Voto " + eleicao.candidato + " cancelado, vote novamente!", false);
+
             }
         }
 
@@ -160,10 +163,14 @@ namespace Urna
         {
             txtNumero1.Text = null;
             txtNumero2.Text = null;
-            txtCandidato.Text = null;
-            txtPartido.Text = null;
+            lblMostraCandidato.Text = null;
+            lblMostraPartido.Text = null;
+            lblMostraVice.Text = null;
             btnCorrige.Enabled = false;
             btnConfirma.Enabled = false;
+            btnBranco.Enabled = true;
+            picturePresidente.ImageLocation = null;
+            pictureVice.ImageLocation = null;
         }
 
         //Monta PopUp
@@ -176,7 +183,7 @@ namespace Urna
                 case DialogResult.Yes:
                     eleicao.Salvar();
                     MessageBox.Show(yes);
-                    //limpaCampos();
+
                     if (quit == true)
                     {
                         this.Hide();
@@ -187,7 +194,7 @@ namespace Urna
                     {
                         limpaCampos();
                     }
-                    
+
                     break;
                 case DialogResult.No:
                     MessageBox.Show(no);
@@ -195,28 +202,5 @@ namespace Urna
                     break;
             }
         }
-
-        private void panelImagem_Paint(object sender, PaintEventArgs e)
-        {
-            //panelImagem.BackgroundImage = Properties.Resources.bolsonaro.jpg;
-
-            //panelImagem.BackgroundImage = Image.FromFile
-            //(System.Environment.GetFolderPath
-            //(System.Environment.SpecialFolder.Personal)
-            //+ @"\GitHub\Applications-C-Sharp\Urna\Properties\bolsonaro.jpg");
-
-
-        }
-
-        private void btnImagem_Click(object sender, EventArgs e)
-        {
-            //panel1.BackgroundImage = (Image)(Properties.Resourses.Chalkboard);
-
-            //panelImagem.BackgroundImage = (Image)(Properties.Resources.bolsonaro);
-
-            panelImagem.BackgroundImage = Image.FromFile
-   (System.Environment.GetFolderPath
-   (System.Environment.SpecialFolder.Personal)
-   + @"\GitHub\Applications-C-Sharp\Urna\Properties\bolsonaro.jpg");
     }
 }

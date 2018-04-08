@@ -29,8 +29,8 @@ namespace Urna
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //Principal form = new Principal();
-            //form.Show();
+            FormLogin form = new FormLogin();
+            form.Show();
         }
     }
 }
