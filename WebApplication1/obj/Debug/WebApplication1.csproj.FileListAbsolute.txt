@@ -31,3 +31,5 @@ C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WebApplication1\bin\Microsof
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WebApplication1\bin\Classes_Ordem_Servico.dll
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WebApplication1\bin\Classes_Ordem_Servico.pdb

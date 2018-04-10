@@ -34,6 +34,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureVice = new System.Windows.Forms.PictureBox();
+            this.lblMostraVice = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblMostraPartido = new System.Windows.Forms.Label();
             this.lblMostraCandidato = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,17 +69,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblMostraVice = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.pictureVice = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturePresidente)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureVice)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -156,6 +156,55 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(467, 374);
             this.panel2.TabIndex = 20;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(359, 324);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 25);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "Vice";
+            // 
+            // pictureVice
+            // 
+            this.pictureVice.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureVice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureVice.BackgroundImage")));
+            this.pictureVice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureVice.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureVice.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pictureVice.ErrorImage = null;
+            this.pictureVice.InitialImage = null;
+            this.pictureVice.Location = new System.Drawing.Point(335, 215);
+            this.pictureVice.Name = "pictureVice";
+            this.pictureVice.Size = new System.Drawing.Size(101, 106);
+            this.pictureVice.TabIndex = 35;
+            this.pictureVice.TabStop = false;
+            // 
+            // lblMostraVice
+            // 
+            this.lblMostraVice.AutoSize = true;
+            this.lblMostraVice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblMostraVice.Location = new System.Drawing.Point(106, 301);
+            this.lblMostraVice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMostraVice.Name = "lblMostraVice";
+            this.lblMostraVice.Size = new System.Drawing.Size(0, 25);
+            this.lblMostraVice.TabIndex = 34;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(42, 301);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 25);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "Vice:";
             // 
             // lblMostraPartido
             // 
@@ -556,55 +605,6 @@
             this.label7.TabIndex = 29;
             this.label7.Text = "Aperte a tecla:";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(42, 301);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 25);
-            this.label12.TabIndex = 33;
-            this.label12.Text = "Vice:";
-            // 
-            // lblMostraVice
-            // 
-            this.lblMostraVice.AutoSize = true;
-            this.lblMostraVice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblMostraVice.Location = new System.Drawing.Point(106, 301);
-            this.lblMostraVice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMostraVice.Name = "lblMostraVice";
-            this.lblMostraVice.Size = new System.Drawing.Size(0, 25);
-            this.lblMostraVice.TabIndex = 34;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(359, 324);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 25);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "Vice";
-            // 
-            // pictureVice
-            // 
-            this.pictureVice.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureVice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureVice.BackgroundImage")));
-            this.pictureVice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureVice.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureVice.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pictureVice.ErrorImage = null;
-            this.pictureVice.InitialImage = null;
-            this.pictureVice.Location = new System.Drawing.Point(335, 215);
-            this.pictureVice.Name = "pictureVice";
-            this.pictureVice.Size = new System.Drawing.Size(101, 106);
-            this.pictureVice.TabIndex = 35;
-            this.pictureVice.TabStop = false;
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -625,11 +625,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturePresidente)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureVice)).EndInit();
             this.ResumeLayout(false);
 
         }

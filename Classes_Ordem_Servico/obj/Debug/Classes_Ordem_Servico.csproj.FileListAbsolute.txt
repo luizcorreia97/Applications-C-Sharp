@@ -1,0 +1,5 @@
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Classes_Ordem_Servico\bin\Debug\Classes_Ordem_Servico.dll
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Classes_Ordem_Servico\bin\Debug\Classes_Ordem_Servico.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Classes_Ordem_Servico\obj\Debug\Classes_Ordem_Servico.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Classes_Ordem_Servico\obj\Debug\Classes_Ordem_Servico.dll
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Classes_Ordem_Servico\obj\Debug\Classes_Ordem_Servico.pdb

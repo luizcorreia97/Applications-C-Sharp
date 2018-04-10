@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="BuscarOrdem">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuscarOrdemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarOrdemResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Salvar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ordem" type="tns:Ordem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Ordem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idOrdem" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dataAbertura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dataFinalizacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idMarca" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idStatus" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SalvarResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Alterar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ordem" type="tns:Ordem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Deletar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletarResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuscarMarca">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuscarMarcaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarMarcaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuscarStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarStatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="BuscarOrdemSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarOrdem" />
+  </wsdl:message>
+  <wsdl:message name="BuscarOrdemSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarOrdemResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalvarSoapIn">
+    <wsdl:part name="parameters" element="tns:Salvar" />
+  </wsdl:message>
+  <wsdl:message name="SalvarSoapOut">
+    <wsdl:part name="parameters" element="tns:SalvarResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSoapIn">
+    <wsdl:part name="parameters" element="tns:Alterar" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterarResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletarSoapIn">
+    <wsdl:part name="parameters" element="tns:Deletar" />
+  </wsdl:message>
+  <wsdl:message name="DeletarSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletarResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarMarcaSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarMarca" />
+  </wsdl:message>
+  <wsdl:message name="BuscarMarcaSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarStatus" />
+  </wsdl:message>
+  <wsdl:message name="BuscarStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSOrdemServicoSoap">
+    <wsdl:operation name="BuscarOrdem">
+      <wsdl:input message="tns:BuscarOrdemSoapIn" />
+      <wsdl:output message="tns:BuscarOrdemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Salvar">
+      <wsdl:input message="tns:SalvarSoapIn" />
+      <wsdl:output message="tns:SalvarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Alterar">
+      <wsdl:input message="tns:AlterarSoapIn" />
+      <wsdl:output message="tns:AlterarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Deletar">
+      <wsdl:input message="tns:DeletarSoapIn" />
+      <wsdl:output message="tns:DeletarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarMarca">
+      <wsdl:input message="tns:BuscarMarcaSoapIn" />
+      <wsdl:output message="tns:BuscarMarcaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarStatus">
+      <wsdl:input message="tns:BuscarStatusSoapIn" />
+      <wsdl:output message="tns:BuscarStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSOrdemServicoSoap" type="tns:WSOrdemServicoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BuscarOrdem">
+      <soap:operation soapAction="http://tempuri.org/BuscarOrdem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Salvar">
+      <soap:operation soapAction="http://tempuri.org/Salvar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Alterar">
+      <soap:operation soapAction="http://tempuri.org/Alterar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Deletar">
+      <soap:operation soapAction="http://tempuri.org/Deletar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarMarca">
+      <soap:operation soapAction="http://tempuri.org/BuscarMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarStatus">
+      <soap:operation soapAction="http://tempuri.org/BuscarStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSOrdemServicoSoap12" type="tns:WSOrdemServicoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BuscarOrdem">
+      <soap12:operation soapAction="http://tempuri.org/BuscarOrdem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Salvar">
+      <soap12:operation soapAction="http://tempuri.org/Salvar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Alterar">
+      <soap12:operation soapAction="http://tempuri.org/Alterar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Deletar">
+      <soap12:operation soapAction="http://tempuri.org/Deletar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarMarca">
+      <soap12:operation soapAction="http://tempuri.org/BuscarMarca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarStatus">
+      <soap12:operation soapAction="http://tempuri.org/BuscarStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSOrdemServico">
+    <wsdl:port name="WSOrdemServicoSoap" binding="tns:WSOrdemServicoSoap">
+      <soap:address location="http://localhost:60944/WSOrdemServico.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSOrdemServicoSoap12" binding="tns:WSOrdemServicoSoap12">
+      <soap12:address location="http://localhost:60944/WSOrdemServico.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
