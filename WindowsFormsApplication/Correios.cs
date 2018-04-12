@@ -17,13 +17,12 @@ namespace WindowsFormsApplication
         {
             InitializeComponent();
             txtCep.MaxLength = 8;
-            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             AtendeClienteClient ws = new AtendeClienteClient();
-
+        
             try
             {
                 var dados = ws.consultaCEP(txtCep.Text);

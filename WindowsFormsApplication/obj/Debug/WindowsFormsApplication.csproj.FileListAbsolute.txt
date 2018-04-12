@@ -37,3 +37,4 @@ C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WindowsFormsApplication\obj\
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.ConsumirWebService.resources
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.Correios.resources
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.MeuDataService.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.Upload.resources

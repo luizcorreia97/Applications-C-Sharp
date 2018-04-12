@@ -87,7 +87,7 @@
             this.maskedTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.maskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.maskedTextBox.Location = new System.Drawing.Point(52, 92);
-            this.maskedTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maskedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBox.Name = "maskedTextBox";
             this.maskedTextBox.Size = new System.Drawing.Size(213, 34);
             this.maskedTextBox.TabIndex = 25;

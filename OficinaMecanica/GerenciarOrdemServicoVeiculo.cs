@@ -31,6 +31,7 @@ namespace OficinaMecanica
 
             this.maskedPlaca.Mask = "AAA-0000";
             txtNome.Focus();
+            txtNome.Select();
         }
  
         private void btnExcluir_Click(object sender, EventArgs e)

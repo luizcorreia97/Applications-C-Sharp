@@ -42,5 +42,15 @@ namespace WindowsFormsApplication.Properties {
                 return ((string)(this["WindowsFormsApplication_MeuDataSet_MeuDataSet"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:60944/WebService2.asmx")]
+        public string WindowsFormsApplication_localhost_WebService2 {
+            get {
+                return ((string)(this["WindowsFormsApplication_localhost_WebService2"]));
+            }
+        }
     }
 }

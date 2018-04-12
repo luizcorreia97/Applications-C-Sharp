@@ -18,6 +18,7 @@ namespace Urna
             maskedTextBox.TextAlign = HorizontalAlignment.Center; // deixa caracteres centralizados            
             this.maskedTextBox.Mask = "000,000,000-00";
             maskedTextBox.Focus();
+            maskedTextBox.Select();
         }
 
         //Botão Entrar
