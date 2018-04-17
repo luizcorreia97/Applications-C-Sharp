@@ -1,0 +1,5 @@
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Classes_Imobiliaria\bin\Debug\Classes_Imobiliaria.dll
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Classes_Imobiliaria\bin\Debug\Classes_Imobiliaria.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Classes_Imobiliaria\obj\Debug\Classes_Imobiliaria.dll
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Classes_Imobiliaria\obj\Debug\Classes_Imobiliaria.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Classes_Imobiliaria\obj\Debug\Classes_Imobiliaria.csprojResolveAssemblyReference.cache

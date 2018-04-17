@@ -1,0 +1,12 @@
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\bin\Debug\ImobiliariaProvaBimestral.exe.config
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\bin\Debug\ImobiliariaProvaBimestral.exe
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\bin\Debug\ImobiliariaProvaBimestral.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\bin\Debug\Classes_Imobiliaria.dll
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\bin\Debug\Classes_Imobiliaria.pdb
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\obj\Debug\ImobiliariaProvaBimestral1.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\obj\Debug\ImobiliariaProvaBimestral.FormImovel.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\obj\Debug\ImobiliariaProvaBimestral.FormListagem.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\obj\Debug\ImobiliariaProvaBimestral.Properties.Resources.resources
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\obj\Debug\ImobiliariaProvaBimestral1.csproj.GenerateResource.Cache
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\obj\Debug\ImobiliariaProvaBimestral.exe
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\ImobiliariaProvaBimestral\obj\Debug\ImobiliariaProvaBimestral.pdb

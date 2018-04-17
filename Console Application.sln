@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minhas_Classes", "Minhas_Classes\Minhas_Classes.csproj", "{D03A0E38-3419-4CB5-829D-8B2E60F490D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova1", "Prova1\Prova1.csproj", "{5816CB7A-B5F1-4396-A353-EFD7BB5FEE48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvaParcial1", "Prova1\ProvaParcial1.csproj", "{5816CB7A-B5F1-4396-A353-EFD7BB5FEE48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{32C656A2-302E-4A60-BD43-7E8225D74458}"
 EndProject
@@ -24,6 +24,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdemServico", "OficinaMecanica\OrdemServico.csproj", "{26615A1D-7A44-46E7-BC58-26406B3D39D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes_Ordem_Servico", "Classes_Ordem_Servico\Classes_Ordem_Servico.csproj", "{BAF7F89C-5253-4F79-AA47-9133BF1817C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImobiliariaProvaBimestral1", "ImobiliariaProvaBimestral\ImobiliariaProvaBimestral1.csproj", "{AB2A674A-143E-4C3C-A5C7-DEFC9616B24C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes_Imobiliaria", "Classes_Imobiliaria\Classes_Imobiliaria.csproj", "{B83D825D-E92C-460D-8F66-13D4B81FB660}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{BAF7F89C-5253-4F79-AA47-9133BF1817C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAF7F89C-5253-4F79-AA47-9133BF1817C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAF7F89C-5253-4F79-AA47-9133BF1817C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB2A674A-143E-4C3C-A5C7-DEFC9616B24C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2A674A-143E-4C3C-A5C7-DEFC9616B24C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2A674A-143E-4C3C-A5C7-DEFC9616B24C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2A674A-143E-4C3C-A5C7-DEFC9616B24C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B83D825D-E92C-460D-8F66-13D4B81FB660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B83D825D-E92C-460D-8F66-13D4B81FB660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B83D825D-E92C-460D-8F66-13D4B81FB660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B83D825D-E92C-460D-8F66-13D4B81FB660}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
