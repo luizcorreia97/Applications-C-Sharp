@@ -53,7 +53,7 @@ namespace Minhas_Classes
         public DataSet Buscar()
         {
             DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select * from professor order by idprofessor desc", con);
+            SqlCommand comando = new SqlCommand("select * from professor order by idprofessor asc", con);
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
