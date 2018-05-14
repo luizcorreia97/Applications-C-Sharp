@@ -22,8 +22,6 @@ namespace ProfessoresWebForms
             if (e.CommandName.Equals("Edit"))
             {
                 Response.Write("<script>alert('Desejar editar " + e.Item.Cells[1].Text + "?')</script>");
-                Response.Redirect("Index.aspx?id="+ e.Item.Cells[0].Text + "&nome=" + e.Item.Cells[1].Text + "&idade=" + e.Item.Cells[2].Text + "&sexo=" + e.Item.Cells[3].Text); ;
-                
             }
             if (e.CommandName.Equals("Delete"))
             {

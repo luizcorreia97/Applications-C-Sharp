@@ -19,15 +19,8 @@ namespace ProfessoresWebForms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //gridProfessor.DataSource = prof.Buscar();
-            //gridProfessor.DataBind();
-
-            //limpaCampos();
-
-            txtID.Text = Request.QueryString["id"];
-            txtNome.Text = Request.QueryString["nome"];
-            txtIdade.Text = Request.QueryString["idade"];
-            DropDownSexo.Text = Request.QueryString["sexo"];
+            gridProfessor.DataSource = prof.Buscar();
+            gridProfessor.DataBind();
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
@@ -42,8 +35,8 @@ namespace ProfessoresWebForms
 
                 Response.Write("<script>alert('Professor " + txtNome.Text + " salvo com sucesso.');</script>");
 
-                //gridProfessor.DataSource = prof.Buscar();
-                //gridProfessor.DataBind();
+                gridProfessor.DataSource = prof.Buscar();
+                gridProfessor.DataBind();
             }
             else
             {
@@ -52,8 +45,8 @@ namespace ProfessoresWebForms
 
                 Response.Write("<script>alert('Professor " + txtNome.Text + " alterado com sucesso.');</script>");
 
-                //gridProfessor.DataSource = prof.Buscar();
-                //gridProfessor.DataBind();
+                gridProfessor.DataSource = prof.Buscar();
+                gridProfessor.DataBind();
             }
 
             limpaCampos();
@@ -67,8 +60,8 @@ namespace ProfessoresWebForms
 
             Response.Write("<script>alert('Professor " + txtNome.Text + " excluído com sucesso.');</script>");
 
-            //gridProfessor.DataSource = prof.Buscar();
-            //gridProfessor.DataBind();
+            gridProfessor.DataSource = prof.Buscar();
+            gridProfessor.DataBind();
 
             limpaCampos();
             txtNome.Focus();
@@ -108,8 +101,8 @@ namespace ProfessoresWebForms
                 limpaCampos();
             }
 
-            //gridProfessor.DataSource = prof.Buscar();
-            //gridProfessor.DataBind();
+            gridProfessor.DataSource = prof.Buscar();
+            gridProfessor.DataBind();
             txtNome.Focus();
         }
 

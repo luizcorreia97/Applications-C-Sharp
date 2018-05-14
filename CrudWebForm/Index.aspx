@@ -38,7 +38,7 @@
             <br />
         </div>
         <br />
-        <%--<asp:DataGrid ID="gridProfessor" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="273px" OnEditCommand="gridProfessor_EditCommand" OnItemCommand="gridProfessor_ItemCommand" OnItemDataBound="gridProfessor_ItemDataBound" PageSize="3" Width="679px">
+        <asp:DataGrid ID="gridProfessor" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="273px" OnEditCommand="gridProfessor_EditCommand" OnItemCommand="gridProfessor_ItemCommand" OnItemDataBound="gridProfessor_ItemDataBound" PageSize="3" Width="679px">
             <AlternatingItemStyle BackColor="White" />
             <Columns>
                 <asp:BoundColumn DataField="idProfessor" HeaderText="ID"></asp:BoundColumn>
@@ -54,7 +54,7 @@
             <ItemStyle BackColor="#E3EAEB" />
             <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
             <SelectedItemStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-        </asp:DataGrid>--%>
+        </asp:DataGrid>
     </form>
 </body>
 </html>

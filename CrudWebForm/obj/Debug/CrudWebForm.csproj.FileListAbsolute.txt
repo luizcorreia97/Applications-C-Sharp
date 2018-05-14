@@ -1,0 +1,1 @@
+C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\CrudWebForm\obj\Debug\CrudWebForm.csprojResolveAssemblyReference.cache
