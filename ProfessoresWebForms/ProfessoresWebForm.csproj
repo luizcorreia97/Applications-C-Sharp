@@ -95,6 +95,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cadastro.aspx" />
+    <Content Include="ListagemBootstrap.aspx" />
+    <Content Include="Componentes.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -111,6 +113,7 @@
     <Content Include="ListagemProfessores.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="CadastroBootstrap.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +123,20 @@
     </Compile>
     <Compile Include="Cadastro.aspx.designer.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListagemBootstrap.aspx.cs">
+      <DependentUpon>ListagemBootstrap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListagemBootstrap.aspx.designer.cs">
+      <DependentUpon>ListagemBootstrap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes.aspx.cs">
+      <DependentUpon>Componentes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Componentes.aspx.designer.cs">
+      <DependentUpon>Componentes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -136,6 +153,13 @@
       <DependentUpon>ListagemProfessores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CadastroBootstrap.aspx.cs">
+      <DependentUpon>CadastroBootstrap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroBootstrap.aspx.designer.cs">
+      <DependentUpon>CadastroBootstrap.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Minhas_Classes\Minhas_Classes.csproj">

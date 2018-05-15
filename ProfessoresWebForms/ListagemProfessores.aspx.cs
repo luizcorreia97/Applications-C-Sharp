@@ -13,8 +13,31 @@ namespace ProfessoresWebForms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            gridProfessor.DataSource = prof.Buscar();
-            gridProfessor.DataBind();
+            if (!Page.IsPostBack)
+            {
+                gridProfessor.DataSource = prof.Buscar();
+                gridProfessor.DataBind();
+                rbListSexo.SelectedIndex = 0;
+            }
+            if (rbListSexo.AutoPostBack)
+            {
+                gridProfessor.DataSource = prof.BuscarPorSexo(rbListSexo.SelectedValue);
+                gridProfessor.DataBind();
+            }
+            if (chkListIdade.AutoPostBack)
+            {
+                if (Convert.ToString(chkListIdade.SelectedItem) != "")
+                {
+                    //Response.Write("<script>alert('Professor " + chkListIdade.SelectedItem + " excluído com sucesso.');</script>");
+                    gridProfessor.DataSource = prof.BuscarPorIdade(Convert.ToString(chkListIdade.SelectedItem));
+                    gridProfessor.DataBind();
+                }
+                else
+                {
+                    gridProfessor.DataSource = prof.BuscarPorSexo(rbListSexo.SelectedValue);
+                    gridProfessor.DataBind();
+                }
+            }
         }
 
         protected void gridProfessor_ItemCommand(object source, DataGridCommandEventArgs e)
@@ -23,12 +46,72 @@ namespace ProfessoresWebForms
             {
                 Response.Write("<script>alert('Desejar editar " + e.Item.Cells[1].Text + "?')</script>");
                 Response.Redirect("Index.aspx?id="+ e.Item.Cells[0].Text + "&nome=" + e.Item.Cells[1].Text + "&idade=" + e.Item.Cells[2].Text + "&sexo=" + e.Item.Cells[3].Text); ;
-                
             }
             if (e.CommandName.Equals("Delete"))
             {
                 Response.Write("<script>alert('Desejar excluir " + e.Item.Cells[1].Text + "?')</script>");
+
+                prof.idProfessor = Convert.ToInt32(e.Item.Cells[0].Text);
+                prof.Deletar();
+
+                gridProfessor.DataSource = prof.BuscarPorSexo(rbListSexo.SelectedValue);
+                gridProfessor.DataBind();
+
+                Response.Write("<script>alert('Professor " + e.Item.Cells[1].Text + " excluído com sucesso.');</script>");
             }
         }
+
+        protected void btnFiltrarSexo_Click(object sender, EventArgs e)
+        {
+            //Response.Write("<script>alert('Selecionado " + rbList.SelectedValue + "')</script>");
+            gridProfessor.DataSource = prof.BuscarPorSexo(rbListSexo.SelectedValue);
+            gridProfessor.DataBind();
+        }
+
+        protected void gridProfessor_ItemDataBound(object sender, DataGridItemEventArgs e)
+        {
+            if (e.Item.Cells[3].Text == "M")
+            {
+                e.Item.Cells[3].Text = "Masculino";
+                //e.Item.Cells[2].Text = 
+            }
+            if (e.Item.Cells[3].Text == "F")
+            {
+                e.Item.Cells[3].Text = "Feminino";
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToString(chkListIdade.SelectedItem) != "")
+            {
+                Response.Write("<script>alert('Professor " + chkListIdade.SelectedItem + " excluído com sucesso.');</script>");
+                gridProfessor.DataSource = prof.BuscarPorIdade(Convert.ToString(chkListIdade.SelectedItem));
+                gridProfessor.DataBind();
+            }
+            else
+            {
+                gridProfessor.DataSource = prof.BuscarPorSexo(rbListSexo.SelectedValue);
+                gridProfessor.DataBind();
+            }
+            
+        }
+
+        protected void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
+        }
+
+        //protected void rbList_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    //Response.Write("<script>alert('Oi');</script>");
+        //    gridProfessor.DataSource = prof.BuscarPorSexo(rbList.SelectedValue);
+        //    gridProfessor.DataBind();
+        //}
+
+        //protected void rbList_DataBound(object sender, EventArgs e)
+        //{
+        //    Response.Write("<script>alert('Oi Data Bound');</script>");
+        //}
     }
 }

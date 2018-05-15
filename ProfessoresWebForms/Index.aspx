@@ -9,18 +9,18 @@
 <body>
     <form id="form2" runat="server">
         <div>
-            PROFESSORES<br />
+            CADASTRAR/ALTERAR PROFESSOR<br />
         </div>
         <hr />
         <div>
-            <asp:HyperLink ID="HyperLink2" NavigateUrl="ListagemProfessores.aspx" runat="server">Voltar</asp:HyperLink>
+            <asp:Button ID="btnVoltar" runat="server" OnClick="btnVoltar_Click" Text="Voltar" />
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="ID:"></asp:Label>
             <asp:TextBox ID="txtID" runat="server" Style="margin-left: 32px" Width="88px" Enabled="False"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label3" runat="server" Text="Nome:"></asp:Label>
-            <asp:TextBox ID="txtNome" runat="server" Width="351px" Style="margin-left: 6px"></asp:TextBox>
+            <asp:TextBox ID="txtNome" runat="server" Width="380px" Style="margin-left: 6px"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="Label4" runat="server" Text="Idade:"></asp:Label>

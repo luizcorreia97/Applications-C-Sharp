@@ -101,5 +101,23 @@ namespace Minhas_Classes
             da.Fill(ds);
             return ds;
         }
+        
+        public DataSet BuscarPorSexo(string sexo)
+        {
+            DataSet ds = new DataSet();
+            SqlCommand comando = new SqlCommand("select * from professor where sexo in ('" + sexo + "')", con);
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+            da.Fill(ds);
+            return ds;
+        }
+
+        public DataSet BuscarPorIdade(string idade)
+        {
+            DataSet ds = new DataSet();
+            SqlCommand comando = new SqlCommand("select * from professor where idade " + idade + "", con);
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+            da.Fill(ds);
+            return ds;
+        }
     }
 }

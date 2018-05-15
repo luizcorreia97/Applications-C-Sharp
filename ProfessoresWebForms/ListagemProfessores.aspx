@@ -9,10 +9,30 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:HyperLink ID="HyperLink1" NavigateUrl="Index.aspx" runat="server">Voltar</asp:HyperLink>
-        </div>
+            LISTAGEM DE PROFESSORES<br />
+            <br />
+            Filtros:<br />
+            <br />
+            Sexo:<asp:RadioButtonList ID="rbListSexo" runat="server" AutoPostBack="True" Width="130px">
+                    <asp:ListItem Value="M','F">Todos</asp:ListItem>
+                    <asp:ListItem Value="M">Masculino</asp:ListItem>
+                    <asp:ListItem Value="F">Feminino</asp:ListItem>
+                </asp:RadioButtonList>
 
-        <asp:DataGrid ID="gridProfessor" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="325px" OnItemCommand="gridProfessor_ItemCommand" Width="590px" AutoGenerateColumns="False">
+            <br />
+
+            Idade:<asp:CheckBoxList ID="chkListIdade" runat="server" AutoPostBack="True">
+                <asp:ListItem>&lt; 20</asp:ListItem>
+                <asp:ListItem>&gt;= 20</asp:ListItem>
+                <asp:ListItem>&gt;= 40</asp:ListItem>
+                <asp:ListItem>&gt; 60</asp:ListItem>
+            </asp:CheckBoxList>
+            <br />
+            <asp:Button ID="btnAdicionar" runat="server" OnClick="btnAdicionar_Click" Text="Adicionar" />
+            <br />
+            <br />
+        </div>
+        <asp:DataGrid ID="gridProfessor" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="325px" OnItemCommand="gridProfessor_ItemCommand" Width="590px" AutoGenerateColumns="False" OnItemDataBound="gridProfessor_ItemDataBound">
             <AlternatingItemStyle BackColor="White" />
             <Columns>
                 <asp:BoundColumn DataField="idProfessor" HeaderText="ID"></asp:BoundColumn>

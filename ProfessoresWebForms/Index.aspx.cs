@@ -19,15 +19,19 @@ namespace ProfessoresWebForms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //gridProfessor.DataSource = prof.Buscar();
-            //gridProfessor.DataBind();
+            if (!Page.IsPostBack)
+            {
+                txtNome.Focus();
+                //gridProfessor.DataSource = prof.Buscar();
+                //gridProfessor.DataBind();
 
-            //limpaCampos();
+                //limpaCampos();
 
-            txtID.Text = Request.QueryString["id"];
-            txtNome.Text = Request.QueryString["nome"];
-            txtIdade.Text = Request.QueryString["idade"];
-            DropDownSexo.Text = Request.QueryString["sexo"];
+                txtID.Text = Request.QueryString["id"];
+                txtNome.Text = Request.QueryString["nome"];
+                txtIdade.Text = Request.QueryString["idade"];
+                DropDownSexo.Text = Request.QueryString["sexo"];
+            }
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
@@ -56,8 +60,9 @@ namespace ProfessoresWebForms
                 //gridProfessor.DataBind();
             }
 
-            limpaCampos();
-            txtNome.Focus();
+            //limpaCampos();
+            //txtNome.Focus();
+            Response.Redirect("ListagemProfessores.aspx");
         }
 
         protected void btnExcluir_Click(object sender, EventArgs e)
@@ -149,6 +154,11 @@ namespace ProfessoresWebForms
         protected void btnLimparCampos_Click(object sender, EventArgs e)
         {
             limpaCampos();
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ListagemProfessores.aspx");
         }
     }
 }
