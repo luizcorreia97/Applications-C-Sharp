@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NossoSite", "NossoSite\Noss
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfessoresWebForm", "ProfessoresWebForms\ProfessoresWebForm.csproj", "{B692DE31-CCB7-4D33-9A03-EB02FFAA57A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormEstacionamento", "WebFormEstacionamento\WebFormEstacionamento.csproj", "{2DDFCB37-CEFE-4DB7-8F7D-B4CB8D72D71B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{B692DE31-CCB7-4D33-9A03-EB02FFAA57A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B692DE31-CCB7-4D33-9A03-EB02FFAA57A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B692DE31-CCB7-4D33-9A03-EB02FFAA57A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DDFCB37-CEFE-4DB7-8F7D-B4CB8D72D71B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDFCB37-CEFE-4DB7-8F7D-B4CB8D72D71B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDFCB37-CEFE-4DB7-8F7D-B4CB8D72D71B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDFCB37-CEFE-4DB7-8F7D-B4CB8D72D71B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

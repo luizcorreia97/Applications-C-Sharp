@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Aluno.cs" />
     <Compile Include="Funcionario.cs" />
+    <Compile Include="Estacionamento.cs" />
     <Compile Include="Professor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Urna.cs" />

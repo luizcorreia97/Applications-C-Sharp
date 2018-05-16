@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace ProfessoresWebForms
 {
-    public partial class testeBootstrap : System.Web.UI.Page
+    public partial class CadastroBootstrap : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

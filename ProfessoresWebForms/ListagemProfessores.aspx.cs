@@ -28,7 +28,7 @@ namespace ProfessoresWebForms
             {
                 if (Convert.ToString(chkListIdade.SelectedItem) != "")
                 {
-                    //Response.Write("<script>alert('Professor " + chkListIdade.SelectedItem + " excluído com sucesso.');</script>");
+                    //Response.Write("<script>alert('Professor " + chkListIdade.SelectedItem + " selecionado.');</script>");
                     gridProfessor.DataSource = prof.BuscarPorIdade(Convert.ToString(chkListIdade.SelectedItem));
                     gridProfessor.DataBind();
                 }
@@ -81,6 +81,11 @@ namespace ProfessoresWebForms
             }
         }
 
+        protected void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (Convert.ToString(chkListIdade.SelectedItem) != "")
@@ -94,12 +99,6 @@ namespace ProfessoresWebForms
                 gridProfessor.DataSource = prof.BuscarPorSexo(rbListSexo.SelectedValue);
                 gridProfessor.DataBind();
             }
-            
-        }
-
-        protected void btnAdicionar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Index.aspx");
         }
 
         //protected void rbList_SelectedIndexChanged(object sender, EventArgs e)

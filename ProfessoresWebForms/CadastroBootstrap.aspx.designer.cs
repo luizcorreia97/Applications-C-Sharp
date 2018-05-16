@@ -10,8 +10,7 @@
 namespace ProfessoresWebForms
 {
 
-
-    public partial class testeBootstrap
+    public partial class CadastroBootstrap
     {
 
         /// <summary>

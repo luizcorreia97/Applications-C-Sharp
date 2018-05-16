@@ -13,7 +13,7 @@
             <br />
             Filtros:<br />
             <br />
-            Sexo:<asp:RadioButtonList ID="rbListSexo" runat="server" AutoPostBack="True" Width="130px">
+            Sexo:<asp:RadioButtonList ID="rbListSexo" runat="server" AutoPostBack="True" Width="130px" RepeatDirection="Horizontal">
                     <asp:ListItem Value="M','F">Todos</asp:ListItem>
                     <asp:ListItem Value="M">Masculino</asp:ListItem>
                     <asp:ListItem Value="F">Feminino</asp:ListItem>
@@ -21,7 +21,7 @@
 
             <br />
 
-            Idade:<asp:CheckBoxList ID="chkListIdade" runat="server" AutoPostBack="True">
+            Idade:<asp:CheckBoxList ID="chkListIdade" runat="server" AutoPostBack="True" RepeatDirection="Horizontal">
                 <asp:ListItem>&lt; 20</asp:ListItem>
                 <asp:ListItem>&gt;= 20</asp:ListItem>
                 <asp:ListItem>&gt;= 40</asp:ListItem>

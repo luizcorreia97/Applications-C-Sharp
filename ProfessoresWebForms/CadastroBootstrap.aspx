@@ -5,15 +5,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" href="https://avatars0.githubusercontent.com/u/22556132?s=460&v=4">
       <title>Professores</title>
-     <%-- <environment names="Development">
+       <%-- <environment names="Development">
          <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
          <link rel="stylesheet" href="~/css/site.css" />
       </environment>--%>
       <environment names="Staging,Production">
          <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" />
-          <%--<asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css" />--%>
-            <%--asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />--%>
-            <%--<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />--%>
+       <%--<asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css" />--%>            <%--asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />--%>            <%--<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />--%>
       </environment>
    </head>
    <body>
@@ -34,7 +32,7 @@
                   <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                   <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                </ul>
-               <%--@await Html.PartialAsync("_LoginPartial")--%>
+                <%--@await Html.PartialAsync("_LoginPartial")--%>
             </div>
          </div>
       </div>
@@ -48,25 +46,25 @@
              <br />
              <div class="row">
                  <div class="col-xs-10 col-md-8">
-                      <label for="txtUsername">Nome</label>
-                      <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" placeholder="Digite o nome" required />
+                      <label>Nome</label>
+                      <asp:TextBox ID="txtNome" runat="server" CssClass="form-control" placeholder="Digite o nome" required />
                  </div>
              </div>
              <br />
              <div class="row">
                  <div class="col-xs-10 col-md-4">
-                       <label for="txtPassword">Idade</label>
-                        <asp:TextBox ID="TextBox1" runat="server" TextMode="Number" CssClass="form-control" placeholder="Digite a idade" required />
+                       <label>Idade</label>
+                        <asp:TextBox ID="txtIdade" runat="server" TextMode="Number" CssClass="form-control" placeholder="Digite a idade" required />
                  </div>
                  <div class="col-xs-10 col-md-3">
                     <label for="txtPassword">Sexo</label>
-                    <asp:DropDownList ID="DropDownList2" CssClass="form-control" runat="server">
+                    <asp:DropDownList ID="drdSexo" CssClass="form-control" runat="server">
                     <asp:ListItem Value="M">Masculino</asp:ListItem>
                     <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="col-xs-10 col-md-1">
-                   <label> &nbsp;</label>
+                   <label style="display: block"> &nbsp;</label>
                    <asp:Button ID="Button1" Text="Salvar" style="float: right;" runat="server" Class="btn btn-success" />
                 </div>
              </div>
@@ -83,6 +81,6 @@
       <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
          asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
          asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"></script>
-      <%--<script src="~/js/site.min.js" asp-append-version="true"></script>--%>
+       <%--<script src="~/js/site.min.js" asp-append-version="true"></script>--%>
    </body>
 </html>
