@@ -15,6 +15,7 @@ namespace Minhas_Classes
         public string nome { get; set; }
         public int idade { get; set; }
         public char sexo { get; set; }
+        public int idMateria { get; set; }
 
         // String de conexão com o banco
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=Facear;Integrated Security=True");
@@ -118,6 +119,26 @@ namespace Minhas_Classes
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
+        }
+
+        // Método Buscar
+        public DataSet BuscarMateria()
+        {
+            DataSet ds = new DataSet();
+            SqlCommand comando = new SqlCommand("select * from materia order by nome", con);
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+            da.Fill(ds);
+            return ds;
+        }
+
+        // Método Salvar
+        public void SalvarMateriaProfessor()
+        {
+            string comando_sql = "insert into materiaProfessor values (" + this.idProfessor + ", " + this.idMateria + ")";
+            SqlCommand comando = new SqlCommand(comando_sql, con);
+            con.Open();
+            comando.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

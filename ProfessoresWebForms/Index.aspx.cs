@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Minhas_Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -31,6 +32,11 @@ namespace ProfessoresWebForms
                 txtNome.Text = Request.QueryString["nome"];
                 txtIdade.Text = Request.QueryString["idade"];
                 DropDownSexo.Text = Request.QueryString["sexo"];
+
+                dropDownMaterias.DataSource = prof.BuscarMateria();
+                dropDownMaterias.DataTextField = "nome";
+                dropDownMaterias.DataValueField = "idMateria";
+                dropDownMaterias.DataBind();
             }
         }
 
@@ -45,6 +51,19 @@ namespace ProfessoresWebForms
                 prof.Salvar();
 
                 Response.Write("<script>alert('Professor " + txtNome.Text + " salvo com sucesso.');</script>");
+
+                IList<Professor> lista = new List<Professor>();
+                if (Session["lista_de_materias"] != null)
+                {
+                    lista = (List<Professor>)Session["lista_de_materias"];
+
+                    foreach (var item in lista)
+                    {
+                        Professor p = new Professor();
+                        p = item;
+                        p.SalvarMateriaProfessor();
+                    }
+                }
 
                 //gridProfessor.DataSource = prof.Buscar();
                 //gridProfessor.DataBind();
@@ -159,6 +178,24 @@ namespace ProfessoresWebForms
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("ListagemProfessores.aspx");
+        }
+
+        protected void btnAddMateria_Click(object sender, EventArgs e)
+        {
+            IList<Professor> lista = new List<Professor>();
+            if (Session["lista_de_materias"] != null)
+            {
+                lista = (List<Professor>)Session["lista_de_materias"];
+            }
+
+            Professor p = new Professor();
+            p.idProfessor = Convert.ToInt32(dropDownMaterias.SelectedItem.Value);
+            p.nome = dropDownMaterias.SelectedItem.Text;
+            lista.Add(p);
+            Session["lista_de_materias"] = lista;
+
+            dgMaterias.DataSource = lista;
+            dgMaterias.DataBind();
         }
     }
 }

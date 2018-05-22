@@ -70,6 +70,7 @@ namespace ProfessoresWebForms
 
         protected void gridProfessor_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
+
             if (e.Item.Cells[3].Text == "M")
             {
                 e.Item.Cells[3].Text = "Masculino";

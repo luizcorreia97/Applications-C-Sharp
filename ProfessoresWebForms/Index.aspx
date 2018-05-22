@@ -36,8 +36,13 @@
             &nbsp;&nbsp;&nbsp;<asp:Button ID="btnLimparCampos" runat="server" OnClick="btnLimparCampos_Click" Text="Limpar Campos" Width="133px" />
 
             <br />
+            <br />
+            Matérias:<asp:DropDownList ID="dropDownMaterias" runat="server">
+            </asp:DropDownList>
+            <asp:Button ID="btnAddMateria" runat="server" OnClick="btnAddMateria_Click" style="width: 24px" Text="+" />
+
+            <br />
         </div>
-        <br />
         <%--<asp:DataGrid ID="gridProfessor" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="273px" OnEditCommand="gridProfessor_EditCommand" OnItemCommand="gridProfessor_ItemCommand" OnItemDataBound="gridProfessor_ItemDataBound" PageSize="3" Width="679px">
             <AlternatingItemStyle BackColor="White" />
             <Columns>
@@ -55,6 +60,15 @@
             <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
             <SelectedItemStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
         </asp:DataGrid>--%>
+        <asp:DataGrid ID="dgMaterias" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="155px" Width="285px">
+            <AlternatingItemStyle BackColor="White" />
+            <EditItemStyle BackColor="#2461BF" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <ItemStyle BackColor="#EFF3FB" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        </asp:DataGrid>
     </form>
 </body>
 </html>

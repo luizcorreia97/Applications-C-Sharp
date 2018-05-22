@@ -114,6 +114,7 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="CadastroBootstrap.aspx" />
+    <Content Include="Sessao.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="CadastroBootstrap.aspx.designer.cs">
       <DependentUpon>CadastroBootstrap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sessao.aspx.cs">
+      <DependentUpon>Sessao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sessao.aspx.designer.cs">
+      <DependentUpon>Sessao.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
