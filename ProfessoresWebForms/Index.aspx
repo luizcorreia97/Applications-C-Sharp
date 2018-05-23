@@ -42,7 +42,7 @@
             <asp:Button ID="btnAddMateria" runat="server" OnClick="btnAddMateria_Click" style="width: 24px" Text="+" />
 
             <br />
-        </div>
+            MATÉRIAS LOCAL:</div>
         <%--<asp:DataGrid ID="gridProfessor" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="273px" OnEditCommand="gridProfessor_EditCommand" OnItemCommand="gridProfessor_ItemCommand" OnItemDataBound="gridProfessor_ItemDataBound" PageSize="3" Width="679px">
             <AlternatingItemStyle BackColor="White" />
             <Columns>
@@ -68,6 +68,19 @@
             <ItemStyle BackColor="#EFF3FB" />
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
             <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        </asp:DataGrid>
+        <br />
+        MATÉRIAS ARRAY:<asp:DataGrid ID="gridArray" runat="server" AutoGenerateColumns="False" OnItemCommand="gridArray_ItemCommand">
+            <Columns>
+                <asp:BoundColumn DataField="idMateria" HeaderText="idMateria"></asp:BoundColumn>
+                <asp:BoundColumn DataField="nome" HeaderText="nome"></asp:BoundColumn>
+                <asp:ButtonColumn CommandName="Delete" HeaderText="Deletar" Text="Deletar"></asp:ButtonColumn>
+            </Columns>
+        </asp:DataGrid>
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>
+        <br />
+        MATÉRIAS BANCO:<asp:DataGrid ID="gridMateriasBanco" runat="server">
         </asp:DataGrid>
     </form>
 </body>

@@ -27,7 +27,17 @@ namespace Minhas_Classes
             SqlCommand comando = new SqlCommand(comando_sql, con);
             con.Open();
             comando.ExecuteNonQuery();
+            //int id = Convert.ToInt32(comando.ExecuteScalar());
             con.Close();
+        }
+
+        public int BuscaIdProfessor()
+        {
+            SqlCommand comando = new SqlCommand("select max(idprofessor) from professor", con);
+            con.Open();
+            int id = (int)comando.ExecuteScalar();
+            return id;
+            
         }
 
         // Método Alterar
@@ -139,6 +149,21 @@ namespace Minhas_Classes
             con.Open();
             comando.ExecuteNonQuery();
             con.Close();
+        }
+        
+        // Método Buscando da Procedure
+        public DataSet buscaMateriaProfessor(int id)
+        {
+            DataSet ds = new DataSet();
+            SqlCommand comando = new SqlCommand(
+            "select mp.idProfessor, m.idMateria, m.nome " +
+            "from professor p " +
+            "inner join MateriaProfessor mp on (mp.idProfessor = p.idProfessor) " +
+            "inner join materia m on (m.idMateria = mp.idMateria) " +
+            "where mp.idProfessor = " + id, con);
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+            da.Fill(ds);
+            return ds;
         }
     }
 }
