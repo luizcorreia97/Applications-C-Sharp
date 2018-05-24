@@ -37,12 +37,15 @@
 
             <br />
             <br />
-            Matérias:<asp:DropDownList ID="dropDownMaterias" runat="server">
+            <br />
+            Matérias: <asp:DropDownList ID="dropDownMaterias" runat="server" Height="25px" Width="109px" style="margin-bottom: 0px">
             </asp:DropDownList>
-            <asp:Button ID="btnAddMateria" runat="server" OnClick="btnAddMateria_Click" style="width: 24px" Text="+" />
+            &nbsp;<asp:Button ID="btnAddMateria" runat="server" OnClick="btnAddMateria_Click" Text="Adicionar" Width="88px" style="height: 29px" />
 
             <br />
-            MATÉRIAS LOCAL:</div>
+
+            <br />
+        </div>
         <%--<asp:DataGrid ID="gridProfessor" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="273px" OnEditCommand="gridProfessor_EditCommand" OnItemCommand="gridProfessor_ItemCommand" OnItemDataBound="gridProfessor_ItemDataBound" PageSize="3" Width="679px">
             <AlternatingItemStyle BackColor="White" />
             <Columns>
@@ -60,27 +63,18 @@
             <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
             <SelectedItemStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
         </asp:DataGrid>--%>
-        <asp:DataGrid ID="dgMaterias" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="155px" Width="285px">
+        <asp:DataGrid ID="dgMaterias" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="157px" Width="324px" AutoGenerateColumns="False" OnItemCommand="dgMaterias_ItemCommand">
             <AlternatingItemStyle BackColor="White" />
+            <Columns>
+                <asp:BoundColumn DataField="idMateria" HeaderText="Código"></asp:BoundColumn>
+                <asp:BoundColumn DataField="nome" HeaderText="Matéria"></asp:BoundColumn>
+            </Columns>
             <EditItemStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <ItemStyle BackColor="#EFF3FB" />
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
             <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        </asp:DataGrid>
-        <br />
-        MATÉRIAS ARRAY:<asp:DataGrid ID="gridArray" runat="server" AutoGenerateColumns="False" OnItemCommand="gridArray_ItemCommand">
-            <Columns>
-                <asp:BoundColumn DataField="idMateria" HeaderText="idMateria"></asp:BoundColumn>
-                <asp:BoundColumn DataField="nome" HeaderText="nome"></asp:BoundColumn>
-                <asp:ButtonColumn CommandName="Delete" HeaderText="Deletar" Text="Deletar"></asp:ButtonColumn>
-            </Columns>
-        </asp:DataGrid>
-        <asp:GridView ID="GridView1" runat="server">
-        </asp:GridView>
-        <br />
-        MATÉRIAS BANCO:<asp:DataGrid ID="gridMateriasBanco" runat="server">
         </asp:DataGrid>
     </form>
 </body>

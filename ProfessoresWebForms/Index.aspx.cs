@@ -26,7 +26,6 @@ namespace ProfessoresWebForms
                 txtNome.Focus();
                 //gridProfessor.DataSource = prof.Buscar();
                 //gridProfessor.DataBind();
-
                 //limpaCampos();
 
                 txtID.Text = Request.QueryString["id"];
@@ -39,8 +38,12 @@ namespace ProfessoresWebForms
                 dropDownMaterias.DataValueField = "idMateria";
                 dropDownMaterias.DataBind();
 
-                gridMateriasBanco.DataSource = prof.buscaMateriaProfessor(Convert.ToInt32(Request.QueryString["id"]));
-                gridMateriasBanco.DataBind();
+                dgMaterias.DataSource = prof.buscaMateriaProfessor(Convert.ToInt32(Request.QueryString["id"]));
+                dgMaterias.DataBind();
+
+                //Session["lista_de_materias"] = prof.buscaMateriaProfessor(Convert.ToInt32(Request.QueryString["id"]));
+                //dgMaterias.DataSource = Session["lista_de_materias"];
+                //dgMaterias.DataBind();
             }
         }
 
@@ -68,16 +71,10 @@ namespace ProfessoresWebForms
                     {
                         p.idMateria = item.idMateria;
                         p.SalvarMateriaProfessor();
-                        //p = item;
-                        //.idMateria = item;
-                        //p.idProfessor = prof.BuscaIdProfessor();
 
                     }
                 }
                 Session.Remove("lista_de_materias");
-
-                //gridProfessor.DataSource = prof.Buscar();
-                //gridProfessor.DataBind();
             }
             else
             {
@@ -93,10 +90,6 @@ namespace ProfessoresWebForms
                     {
                         p.idMateria = item.idMateria;
                         p.SalvarMateriaProfessor();
-                        //p = item;
-                        //.idMateria = item;
-                        //p.idProfessor = prof.BuscaIdProfessor();
-
                     }
                 }
                 Session.Remove("lista_de_materias");
@@ -105,11 +98,10 @@ namespace ProfessoresWebForms
                 prof.Alterar();
 
                 Response.Write("<script>alert('Professor " + txtNome.Text + " alterado com sucesso.');</script>");
-
-                //gridProfessor.DataSource = prof.Buscar();
-                //gridProfessor.DataBind();
             }
 
+            //gridProfessor.DataSource = prof.Buscar();
+            //gridProfessor.DataBind();
             //limpaCampos();
             //txtNome.Focus();
             Response.Redirect("ListagemProfessores.aspx");
@@ -119,14 +111,12 @@ namespace ProfessoresWebForms
         {
             prof.idProfessor = Convert.ToInt32(txtID.Text);
             prof.Deletar();
-
             Response.Write("<script>alert('Professor " + txtNome.Text + " excluído com sucesso.');</script>");
 
             //gridProfessor.DataSource = prof.Buscar();
             //gridProfessor.DataBind();
-
-            limpaCampos();
-            txtNome.Focus();
+            //limpaCampos();
+            //txtNome.Focus();
         }
 
         protected void gridProfessor_ItemCommand(object source, DataGridCommandEventArgs e)
@@ -151,7 +141,6 @@ namespace ProfessoresWebForms
                 txtNome.Focus();
                 //DropDownSexo.Text = e.Item.Cells[3].Text;
                 //Response.Redirect("Pagina2.aspx?nome=" + e.Item.Cells[1].Text + "&idade=21&idade=");
-
                 //Response.Write("<script>alert('" + e.Item.Cells[1].Text + " excluído com sucesso.')</script>");
             }
             if (e.CommandName.Equals("Delete"))
@@ -203,32 +192,19 @@ namespace ProfessoresWebForms
 
         protected void btnLimparCampos_Click(object sender, EventArgs e)
         {
+            Session.Remove("lista_de_materias");
             limpaCampos();
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
+            Session.Remove("lista_de_materias");
             Response.Redirect("ListagemProfessores.aspx");
         }
 
         protected void btnAddMateria_Click(object sender, EventArgs e)
         {
-            //IList<Professor> lista = new List<Professor>();
-            //if (Session["lista_de_materias"] != null)
-            //{
-            //    lista = (List<Professor>)Session["lista_de_materias"];
-            //}
-
-            //Professor p = new Professor();
-            //p.idProfessor = Convert.ToInt32(dropDownMaterias.SelectedItem.Value);
-            //p.nome = dropDownMaterias.SelectedItem.Text;
-            //lista.Add(p);
-            //Session["lista_de_materias"] = lista;
-
-            //dgMaterias.DataSource = lista;
-            //dgMaterias.DataBind();
-
-            
+            IList<Professor> lista = new List<Professor>();
             if (Session["lista_de_materias"] != null)
             {
                 lista = (List<Professor>)Session["lista_de_materias"];
@@ -240,78 +216,47 @@ namespace ProfessoresWebForms
             lista.Add(p);
             Session["lista_de_materias"] = lista;
 
-            gridArray.DataSource = lista;
-            gridArray.DataBind();
-            
-            //    gridArray.SelectedRows.Select(r => r.Index);
-
-            //GridView1.Rows
-
-
-            //    e.
+            dgMaterias.DataSource = lista;
+            dgMaterias.DataBind();
         }
 
         protected void gridArray_ItemCommand(object source, DataGridCommandEventArgs e)
         {
-
-            
-
             if (e.CommandName.Equals("Delete"))
             {
                 //var item1 = e.Item.ToString();
                 var item2 = e.Item.ItemIndex.ToString();
 
                 //Response.Write("<script>alert('selecteditem.id datagrid: " + item1 = + "')</script>");
-                Response.Write("<script>alert('var item2 = e.Item.ItemIndex.ToString();: " + item2 + "')</script>");
+                //Response.Write("<script>alert('var item2 = e.Item.ItemIndex.ToString();: " + item2 + "')</script>");
                 //lista.RemoveAt(Convert.ToInt32(item2));
 
                 lista = (List<Professor>)Session["lista_de_materias"];
                 lista.RemoveAt(Convert.ToInt32(item2));
                 Session["lista_de_materias"] = lista;
-
-                gridArray.DataSource = lista;
-                gridArray.DataBind();
-
-                //prof.idProfessor = Convert.ToInt32(e.Item.Cells[0].Text);
-                //prof.Deletar();
-
-                //Response.Write("<script>alert('" + e.Item.Cells[1].Text + " excluído com sucesso.')</script>");
-                //limpaCampos();
-
-                //var teste1 = gridArray.SelectedItem.ID;
-
-                //var teste2 = gridArray.SelectedItem.ItemIndex.ToString();
-
-                //var teste3 = gridArray.SelectedIndex;
-
-                //        Int32 selectedRowCount =
-                //gridArray.Rows.GetRowCount(DataGridViewElementStates.Selected);
-
-                //        if(gridArray.SelectedItem
-
-                //Response.Write("<script>alert('SelectedItem.ID datagrid: " + teste1 + "')</script>");
-                //Response.Write("<script>alert('SelectedItem.ItemIndex  datagrid: " + teste2 + "')</script>");
-                //Response.Write("<script>alert('SelectedIndex datagrid: " + teste3 + "')</script>");
-
-                //gridArray.SelectedRows[0].Index;
-
-                //datagridview.CurrentCell.RowIndex
-
-                //if (this.gridArray.SelectedRows.Count > 0)
-
-                //{
-
-                //    bs.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
-
-                //}
-
-                //gridArray.Rows.RemoveAt(gridArray.CurrentRow.Index);
-
-                //foreach (gridAr item in this.dataGridView1.SelectedRows)
-                //{
-                //    bindingSource1.RemoveAt(item.Index);
-                //}
+                
             }
+        }
+
+        protected void dgMaterias_ItemCommand(object source, DataGridCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("Delete"))
+            {
+                int row = e.Item.ItemIndex;
+                //Response.Write("<script>alert('Deletar item: " + row + "')</script>");
+
+                lista = (List<Professor>)Session["lista_de_materias"];
+                lista.RemoveAt(row);
+                Session["lista_de_materias"] = lista;
+
+                dgMaterias.DataSource = lista;
+                dgMaterias.DataBind();
+            }
+            //if (e.CommandName.Equals("Edit"))
+            //{
+            //    var materia = e.Item.Cells[1].Text;
+            //    dropDownMaterias.DataTextField = materia;
+            //}
         }
     }
 }

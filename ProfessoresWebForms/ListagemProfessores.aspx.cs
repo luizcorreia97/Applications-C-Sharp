@@ -102,6 +102,12 @@ namespace ProfessoresWebForms
             }
         }
 
+        protected void gridProfessor_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
+        {
+            gridProfessor.DataSource = prof.Buscar();
+            gridProfessor.DataBind();
+        }
+
         //protected void rbList_SelectedIndexChanged(object sender, EventArgs e)
         //{
         //    //Response.Write("<script>alert('Oi');</script>");

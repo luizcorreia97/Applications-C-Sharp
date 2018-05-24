@@ -135,13 +135,14 @@ namespace Minhas_Classes
         public DataSet BuscarMateria()
         {
             DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select * from materia order by nome", con);
+            //SqlCommand comando = new SqlCommand("select idmateria, concat(nome,' - ',idmateria) as nome from materia", con);
+            SqlCommand comando = new SqlCommand("select * from materia", con);
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
         }
 
-        // Método Salvar
+        // Método Salvar Matéria do Professor
         public void SalvarMateriaProfessor()
         {
             string comando_sql = "insert into materiaProfessor values (" + this.idProfessor + ", " + this.idMateria + ")";
@@ -151,10 +152,9 @@ namespace Minhas_Classes
             con.Close();
         }
         
-        // Método Buscando da Procedure
-        public DataSet buscaMateriaProfessor(int id)
+        public DataTable buscaMateriaProfessor(int id)
         {
-            DataSet ds = new DataSet();
+            DataTable ds = new DataTable();
             SqlCommand comando = new SqlCommand(
             "select mp.idProfessor, m.idMateria, m.nome " +
             "from professor p " +
@@ -165,5 +165,20 @@ namespace Minhas_Classes
             da.Fill(ds);
             return ds;
         }
+        
+        //public List<Professor> retorna(int id)
+        //{
+        //    List<Professor> lista = new List<Professor>();
+
+        //    SqlCommand comando = new SqlCommand(
+        //    "select mp.idProfessor, m.idMateria, m.nome " +
+        //    "from professor p " +
+        //    "inner join MateriaProfessor mp on (mp.idProfessor = p.idProfessor) " +
+        //    "inner join materia m on (m.idMateria = mp.idMateria) " +
+        //    "where mp.idProfessor = " + id, con);
+        //    SqlDataAdapter da = new SqlDataAdapter(comando);
+        //    da.Fill(lista);
+        //    return lista;
+        //}
     }
 }
