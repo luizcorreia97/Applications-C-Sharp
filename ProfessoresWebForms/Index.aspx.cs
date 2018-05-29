@@ -1,6 +1,7 @@
 ﻿using Minhas_Classes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -39,11 +40,9 @@ namespace ProfessoresWebForms
                 dropDownMaterias.DataBind();
 
                 dgMaterias.DataSource = prof.buscaMateriaProfessor(Convert.ToInt32(Request.QueryString["id"]));
-                dgMaterias.DataBind();
-
                 //Session["lista_de_materias"] = prof.buscaMateriaProfessor(Convert.ToInt32(Request.QueryString["id"]));
                 //dgMaterias.DataSource = Session["lista_de_materias"];
-                //dgMaterias.DataBind();
+                dgMaterias.DataBind();
             }
         }
 
@@ -204,6 +203,18 @@ namespace ProfessoresWebForms
 
         protected void btnAddMateria_Click(object sender, EventArgs e)
         {
+            //List<DataRow> rows = table.Rows.Cast<DataRow>().ToList();
+
+            //IEnumerable<Professor> lista = (List<Professor>)Session["lista_de_materias"].
+
+            //(List<Professor>)Session["lista_de_materias"].
+
+            //    Session["lista_de_materias"].
+
+            //List <Professor> lst = dt.AsEnumerable().ToList<Professor>();
+
+            //List<DataRow> list = dgMaterias.AsEnumerable().ToList();
+
             IList<Professor> lista = new List<Professor>();
             if (Session["lista_de_materias"] != null)
             {
