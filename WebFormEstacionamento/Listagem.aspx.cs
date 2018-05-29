@@ -45,6 +45,16 @@ namespace WebFormEstacionamento
                 gridEstacionamento.DataBind();
             }
 
+            else
+            {
+                estac.Alterar();
+
+                Response.Write("<script>alert('Veículo " + txtVeiculo.Text + " alterado com sucesso.');</script>");
+
+                gridEstacionamento.DataSource = estac.Buscar();
+                gridEstacionamento.DataBind();
+            }
+
             //limpaCampos();
             //txtNome.Focus();
         }
@@ -67,8 +77,27 @@ namespace WebFormEstacionamento
         {
             if (e.CommandName.Equals("Edit"))
             {
-                Response.Write("<script>alert('Desejar editar " + e.Item.Cells[1].Text + "?')</script>");
-                Response.Redirect("Index.aspx?id=" + e.Item.Cells[0].Text + "&nome=" + e.Item.Cells[1].Text + "&idade=" + e.Item.Cells[2].Text + "&sexo=" + e.Item.Cells[3].Text); ;
+                txtID.Text = e.Item.Cells[0].Text;
+                txtPlaca.Text = e.Item.Cells[1].Text;
+                txtVeiculo.Text = e.Item.Cells[2].Text;
+                DropDownCor.Text = e.Item.Cells[3].Text;
+                txtDataEntrada.Text = e.Item.Cells[4].Text;
+                txtHoraEntrada.Text = e.Item.Cells[5].Text;
+                txtDataSaida.Text = e.Item.Cells[6].Text;
+                txtHoraSaida.Text = e.Item.Cells[7].Text;
+                txtValorPago.Text = e.Item.Cells[8].Text;
+
+                if (e.Item.Cells[9].Text == "Em Aberto")
+                {
+                    RadioButtonListStatus.Items[0].Selected.ToString();
+                }
+                else
+                {
+                    RadioButtonListStatus.Items[1].Selected.ToString();
+                }
+
+                //Response.Write("<script>alert('Desejar editar " + e.Item.Cells[1].Text + "?')</script>");
+                //Response.Redirect("Index.aspx?id=" + e.Item.Cells[0].Text + "&nome=" + e.Item.Cells[1].Text + "&idade=" + e.Item.Cells[2].Text + "&sexo=" + e.Item.Cells[3].Text); ;
             }
             if (e.CommandName.Equals("Delete"))
             {
@@ -86,7 +115,33 @@ namespace WebFormEstacionamento
 
         protected void gridProfessor_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
+            if (e.Item.Cells[9].Text == "Em Aberto")
+            {
+                e.Item.Cells[9].BackColor = System.Drawing.Color.Red;
+            }
+            if (e.Item.Cells[9].Text == "Finalizado")
+            { 
+                    e.Item.Cells[9].BackColor = System.Drawing.Color.Green;
+            }
 
+        }
+
+        protected void gridEstacionamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gridEstacionamento_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
+        {
+            gridEstacionamento.CurrentPageIndex = e.NewPageIndex;
+            gridEstacionamento.DataSource = estac.Buscar();
+            gridEstacionamento.DataBind();
+        }
+
+        protected void gridEstacionamento_ItemCreated(object sender, DataGridItemEventArgs e)
+        {
+            e.Item.Cells[0].Attributes.Add("onmouseover", "this.style.backgroundColor='red'"); // ISSO AQUI QUE MUDA  A COR QUANDO PASSA O MOUSE
+            //e.Item.Cells[0].Attributes.Add("onmouseout", "this.style.backgroundColor='white'");// VOLTA PARA A COR Q ESTAVA
         }
     }
 }

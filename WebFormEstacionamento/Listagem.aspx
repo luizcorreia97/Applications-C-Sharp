@@ -56,7 +56,7 @@
             <br />
 
         </div>
-        <asp:DataGrid ID="gridEstacionamento" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="325px" OnItemCommand="gridEstacionamento_ItemCommand" Width="590px" AutoGenerateColumns="False" OnItemDataBound="gridProfessor_ItemDataBound" AllowPaging="True" PageSize="3">
+        <asp:DataGrid ID="gridEstacionamento" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="325px" OnItemCommand="gridEstacionamento_ItemCommand" Width="590px" AutoGenerateColumns="False" OnItemDataBound="gridProfessor_ItemDataBound" AllowPaging="True" PageSize="3" OnSelectedIndexChanged="gridEstacionamento_SelectedIndexChanged" OnItemCreated="gridEstacionamento_ItemCreated" OnPageIndexChanged="gridEstacionamento_PageIndexChanged">
             <AlternatingItemStyle BackColor="White" />
             <Columns>
                 <asp:BoundColumn DataField="idEstacionamento" HeaderText="ID"></asp:BoundColumn>
@@ -65,9 +65,11 @@
                 <asp:BoundColumn DataField="cor" HeaderText="Cor"></asp:BoundColumn>
                 <asp:BoundColumn DataField="dataEntrada" HeaderText="Data Entrada"></asp:BoundColumn>
                 <asp:BoundColumn DataField="horaEntrada" HeaderText="Hora Entrada"></asp:BoundColumn>
-                <asp:BoundColumn DataField="dataSaida" HeaderText="dataSaida"></asp:BoundColumn>
-                <asp:BoundColumn DataField="valorPago" HeaderText="valorPago"></asp:BoundColumn>
-                <asp:BoundColumn DataField="status" HeaderText="status"></asp:BoundColumn>
+                <asp:BoundColumn DataField="dataSaida" HeaderText="Data Saída"></asp:BoundColumn>
+                <asp:BoundColumn DataField="horaSaida" HeaderText="Hora Saída"></asp:BoundColumn>
+                <asp:BoundColumn DataField="valorPago" HeaderText="Valor Pago"></asp:BoundColumn>
+                <asp:BoundColumn DataField="status" HeaderText="Status"></asp:BoundColumn>
+                <asp:EditCommandColumn CancelText="Cancel" EditText="Editar" HeaderText="Editar" UpdateText="Update"></asp:EditCommandColumn>
                 <asp:ButtonColumn CommandName="Delete" HeaderText="Excluir" Text="Excluir"></asp:ButtonColumn>
             </Columns>
             <EditItemStyle BackColor="#7C6F57" />

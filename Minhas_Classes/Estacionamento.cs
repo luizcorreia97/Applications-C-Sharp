@@ -36,14 +36,14 @@ namespace Minhas_Classes
         }
 
         // Método Alterar
-        //public void Alterar()
-        //{
-        //    string comando_sql = "update professor set nome = '" + this.nome + "', idade = " + this.idade + ", sexo = '" + this.sexo + "' where idprofessor = " + this.idProfessor;
-        //    SqlCommand comando = new SqlCommand(comando_sql, con);
-        //    con.Open();
-        //    comando.ExecuteNonQuery();
-        //    con.Close();
-        //}
+        public void Alterar()
+        {
+            string comando_sql = "update estacionamento set placa = '" + this.placa + "', veiculo = '" + this.veiculo + "', cor = '" + this.cor + "', dataEntrada = '" + this.dataEntrada + "', horaEntrada = '" + this.horaEntrada + "', dataSaida = '" + this.dataSaida + "', horaSaida = '" + this.horaSaida + "', valorPago = '" + this.valorPago + "', status = '" + this.status + "' where idestacionamento = " + this.idEstacionamento;
+            SqlCommand comando = new SqlCommand(comando_sql, con);
+            con.Open();
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
 
         // Método Deletar
         public void Deletar()
