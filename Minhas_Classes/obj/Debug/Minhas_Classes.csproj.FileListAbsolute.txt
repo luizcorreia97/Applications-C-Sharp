@@ -8,3 +8,8 @@ C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Minhas_Classes\bin\Debug\Min
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Minhas_Classes\obj\Debug\Minhas_Classes.csprojResolveAssemblyReference.cache
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Minhas_Classes\obj\Debug\Minhas_Classes.dll
 C:\Users\Luiz\Documents\GitHub\Applications-C-Sharp\Minhas_Classes\obj\Debug\Minhas_Classes.pdb
+C:\Users\patrick.lima\Documents\Applications-C-Sharp\Minhas_Classes\bin\Debug\Minhas_Classes.dll
+C:\Users\patrick.lima\Documents\Applications-C-Sharp\Minhas_Classes\bin\Debug\Minhas_Classes.pdb
+C:\Users\patrick.lima\Documents\Applications-C-Sharp\Minhas_Classes\obj\Debug\Minhas_Classes.csprojResolveAssemblyReference.cache
+C:\Users\patrick.lima\Documents\Applications-C-Sharp\Minhas_Classes\obj\Debug\Minhas_Classes.dll
+C:\Users\patrick.lima\Documents\Applications-C-Sharp\Minhas_Classes\obj\Debug\Minhas_Classes.pdb

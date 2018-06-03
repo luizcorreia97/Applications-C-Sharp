@@ -1,10 +1,6 @@
 ﻿using Minhas_Classes;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace ProfessoresWebForms
@@ -16,9 +12,9 @@ namespace ProfessoresWebForms
         // txt_nome.Text = Request.QueryString["nome"] + " " + Request.QueryString["sobrenome"];
         // lbl_idade.Text = Request.QueryString["idade"];
         //Response.Redirect("Pagina2.aspx?nome=" + e.Item.Cells[1].Text + "&idade=21&idade=");
-        
+
         Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
-        IList<Professor> lista = new List<Professor>();
+        private HashSet<Professor> _lista = new HashSet<Professor>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,9 +35,9 @@ namespace ProfessoresWebForms
                 dropDownMaterias.DataValueField = "idMateria";
                 dropDownMaterias.DataBind();
 
-                dgMaterias.DataSource = prof.buscaMateriaProfessor(Convert.ToInt32(Request.QueryString["id"]));
-                //Session["lista_de_materias"] = prof.buscaMateriaProfessor(Convert.ToInt32(Request.QueryString["id"]));
-                //dgMaterias.DataSource = Session["lista_de_materias"];
+                // dgMaterias.DataSource = Professor.BuscaMateriaProfessor(Convert.ToInt32(Request.QueryString["id"]));
+                Session["lista_de_materias"] = Professor.BuscaMateriaProfessor(Convert.ToInt32(Request.QueryString["id"]));
+                dgMaterias.DataSource = Session["lista_de_materias"];
                 dgMaterias.DataBind();
             }
         }
@@ -50,40 +46,41 @@ namespace ProfessoresWebForms
         {
             prof.nome = txtNome.Text;
             prof.idade = Convert.ToInt32(txtIdade.Text);
-            prof.sexo = Convert.ToChar(DropDownSexo.Text);
+            prof.sexo = DropDownSexo.Text[0];
 
             if (txtID.Text == "")
             {
                 prof.Salvar();
 
-                Response.Write("<script>alert('Professor " + txtNome.Text + " salvo com sucesso.');</script>");
+                var p = new Professor { idProfessor = Professor.BuscaIdProfessor() };
 
-                Professor p = new Professor();
-                p.idProfessor = prof.BuscaIdProfessor();
-
-                IList<Professor> lista = new List<Professor>();
                 if (Session["lista_de_materias"] != null)
                 {
-                    lista = (List<Professor>)Session["lista_de_materias"];
+                    var listaMateria = (HashSet<Professor>)Session["lista_de_materias"];
 
-                    foreach (var item in lista)
+                    foreach (var item in listaMateria)
                     {
                         p.idMateria = item.idMateria;
                         p.SalvarMateriaProfessor();
 
                     }
                 }
+
+                Response.Write("<script>alert('Professor " + txtNome.Text + " salvo com sucesso.');</script>");
+
                 Session.Remove("lista_de_materias");
             }
             else
             {
-                Professor p = new Professor();
-                p.idProfessor = Convert.ToInt32(txtID.Text);
+                var p = new Professor { idProfessor = Convert.ToInt32(txtID.Text) };
 
-                IList<Professor> lista = new List<Professor>();
                 if (Session["lista_de_materias"] != null)
                 {
-                    lista = (List<Professor>)Session["lista_de_materias"];
+                    // remove todas as materias pq senao ocorreu duplicatas (gambiarra)
+                    p.RemoveAllMaterias(p.idProfessor);
+
+                    // pega todas as materias da sessão
+                    var lista = (HashSet<Professor>)Session["lista_de_materias"];
 
                     foreach (var item in lista)
                     {
@@ -125,17 +122,7 @@ namespace ProfessoresWebForms
                 txtID.Text = e.Item.Cells[0].Text;
                 txtNome.Text = e.Item.Cells[1].Text;
                 txtIdade.Text = e.Item.Cells[2].Text;
-                //DropDownSexo.Text = e.Item.Cells[3].Text;
-
-                if (e.Item.Cells[3].Text == "Masculino")
-                {
-                    DropDownSexo.Text = "M";
-                    //e.Item.Cells[2].Text = 
-                }
-                else
-                {
-                    DropDownSexo.Text = "F";
-                }
+                DropDownSexo.Text = e.Item.Cells[3].Text == "Masculino" ? "M" : "F";
 
                 txtNome.Focus();
                 //DropDownSexo.Text = e.Item.Cells[3].Text;
@@ -148,7 +135,7 @@ namespace ProfessoresWebForms
                 prof.Deletar();
 
                 Response.Write("<script>alert('" + e.Item.Cells[1].Text + " excluído com sucesso.')</script>");
-                limpaCampos();
+                LimpaCampos();
             }
 
             //gridProfessor.DataSource = prof.Buscar();
@@ -158,15 +145,7 @@ namespace ProfessoresWebForms
 
         protected void gridProfessor_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
-            if (e.Item.Cells[3].Text == "M")
-            {
-                e.Item.Cells[3].Text = "Masculino";
-                //e.Item.Cells[2].Text = 
-            }
-            if (e.Item.Cells[3].Text == "F")
-            {
-                e.Item.Cells[3].Text = "Feminino";
-            }
+            e.Item.Cells[3].Text = e.Item.Cells[3].Text == "M" ? "Masculino" : "Feminino";
         }
 
         protected void gridProfessor_EditCommand(object source, DataGridCommandEventArgs e)
@@ -180,7 +159,7 @@ namespace ProfessoresWebForms
         //    e.Item.Cells[0].Attributes.Add("onmouseout", "this.style.backgroundColor='white'");
         //}
 
-        public void limpaCampos()
+        private void LimpaCampos()
         {
             txtID.Text = null;
             txtNome.Text = null;
@@ -192,7 +171,7 @@ namespace ProfessoresWebForms
         protected void btnLimparCampos_Click(object sender, EventArgs e)
         {
             Session.Remove("lista_de_materias");
-            limpaCampos();
+            LimpaCampos();
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
@@ -203,31 +182,21 @@ namespace ProfessoresWebForms
 
         protected void btnAddMateria_Click(object sender, EventArgs e)
         {
-            //List<DataRow> rows = table.Rows.Cast<DataRow>().ToList();
-
-            //IEnumerable<Professor> lista = (List<Professor>)Session["lista_de_materias"].
-
-            //(List<Professor>)Session["lista_de_materias"].
-
-            //    Session["lista_de_materias"].
-
-            //List <Professor> lst = dt.AsEnumerable().ToList<Professor>();
-
-            //List<DataRow> list = dgMaterias.AsEnumerable().ToList();
-
-            IList<Professor> lista = new List<Professor>();
+            var listaMateria = new HashSet<Professor>();
             if (Session["lista_de_materias"] != null)
             {
-                lista = (List<Professor>)Session["lista_de_materias"];
+                listaMateria = (HashSet<Professor>)Session["lista_de_materias"];
             }
 
-            Professor p = new Professor();
-            p.idMateria = Convert.ToInt32(dropDownMaterias.SelectedItem.Value);
-            p.nome = dropDownMaterias.SelectedItem.Text;
-            lista.Add(p);
-            Session["lista_de_materias"] = lista;
+            // adicionando nova matéria no set populado pela sessão
+            listaMateria.Add(new Professor
+            {
+                idMateria = Convert.ToInt32(dropDownMaterias.SelectedItem.Value),
+                nome = dropDownMaterias.SelectedItem.Text
+            });
+            Session["lista_de_materias"] = listaMateria;
 
-            dgMaterias.DataSource = lista;
+            dgMaterias.DataSource = listaMateria;
             dgMaterias.DataBind();
         }
 
@@ -236,16 +205,16 @@ namespace ProfessoresWebForms
             if (e.CommandName.Equals("Delete"))
             {
                 //var item1 = e.Item.ToString();
-                var item2 = e.Item.ItemIndex.ToString();
+                var row = (Professor)e.Item.DataItem;
 
                 //Response.Write("<script>alert('selecteditem.id datagrid: " + item1 = + "')</script>");
                 //Response.Write("<script>alert('var item2 = e.Item.ItemIndex.ToString();: " + item2 + "')</script>");
                 //lista.RemoveAt(Convert.ToInt32(item2));
 
-                lista = (List<Professor>)Session["lista_de_materias"];
-                lista.RemoveAt(Convert.ToInt32(item2));
-                Session["lista_de_materias"] = lista;
-                
+                _lista = (HashSet<Professor>)Session["lista_de_materias"];
+                _lista.Remove(row);
+                Session["lista_de_materias"] = _lista;
+
             }
         }
 
@@ -253,14 +222,14 @@ namespace ProfessoresWebForms
         {
             if (e.CommandName.Equals("Delete"))
             {
-                int row = e.Item.ItemIndex;
+                var row = (Professor)e.Item.DataItem;
                 //Response.Write("<script>alert('Deletar item: " + row + "')</script>");
 
-                lista = (List<Professor>)Session["lista_de_materias"];
-                lista.RemoveAt(row);
-                Session["lista_de_materias"] = lista;
+                _lista = (HashSet<Professor>)Session["lista_de_materias"];
+                _lista.Remove(row);
+                Session["lista_de_materias"] = _lista;
 
-                dgMaterias.DataSource = lista;
+                dgMaterias.DataSource = _lista;
                 dgMaterias.DataBind();
             }
             //if (e.CommandName.Equals("Edit"))

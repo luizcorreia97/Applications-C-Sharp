@@ -38,9 +38,10 @@
             <br />
             <br />
             <br />
-            Matérias: <asp:DropDownList ID="dropDownMaterias" runat="server" Height="25px" Width="109px" style="margin-bottom: 0px">
+            Matérias:
+            <asp:DropDownList ID="dropDownMaterias" runat="server" Height="25px" Width="109px" Style="margin-bottom: 0px">
             </asp:DropDownList>
-            &nbsp;<asp:Button ID="btnAddMateria" runat="server" OnClick="btnAddMateria_Click" Text="Adicionar" Width="88px" style="height: 29px" />
+            &nbsp;<asp:Button ID="btnAddMateria" runat="server" OnClick="btnAddMateria_Click" Text="Adicionar" Width="88px" Style="height: 29px" />
 
             <br />
 

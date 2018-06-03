@@ -20,7 +20,8 @@ namespace WindowsFormsApplication
 
         Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
 
-        public void LimpaCampos() {
+        public void LimpaCampos()
+        {
             txtId.Text = "";
             txtNome.Text = "";
             txtIdade.Text = "";
@@ -30,7 +31,7 @@ namespace WindowsFormsApplication
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
-            dataGridView1.DataSource = prof.buscaNomeProfessor(txtBuscaNome.Text).Tables[0];
+            dataGridView1.DataSource = Professor.BuscaNomeProfessor(txtBuscaNome.Text).Tables[0];
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -46,15 +47,16 @@ namespace WindowsFormsApplication
             prof.nome = txtNome.Text;
             prof.idade = Convert.ToInt32(txtIdade.Text);
             prof.sexo = Convert.ToChar(cmbSexo.Text);
-            
+
         }
-        
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
 
             Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
 
-            if (txtId.Text == "") {
+            if (txtId.Text == "")
+            {
 
                 prof.nome = txtNome.Text;
                 prof.idade = Convert.ToInt32(txtIdade.Text);
@@ -63,7 +65,8 @@ namespace WindowsFormsApplication
                 MessageBox.Show("Professor " + txtNome.Text + " Salvo com sucesso.");
             }
 
-            else {
+            else
+            {
 
                 prof.idProfessor = Convert.ToInt32(txtId.Text);
                 prof.nome = txtNome.Text;
@@ -72,8 +75,8 @@ namespace WindowsFormsApplication
                 prof.Alterar();
                 MessageBox.Show("Professor " + txtNome.Text + " Alterado com sucesso.");
             }
-            
-            dataGridView1.DataSource = prof.buscaNomeProfessor(txtBuscaNome.Text).Tables[0];
+
+            dataGridView1.DataSource = Professor.BuscaNomeProfessor(txtBuscaNome.Text).Tables[0];
             LimpaCampos();
         }
 
@@ -88,14 +91,14 @@ namespace WindowsFormsApplication
                     MessageBox.Show("Professor " + txtNome.Text + " Deletado.");
                     break;
                 case DialogResult.No:
-                    MessageBox.Show("Professor " + txtNome.Text  + " Conversado.");
+                    MessageBox.Show("Professor " + txtNome.Text + " Conversado.");
                     break;
             }
-            
-           dataGridView1.DataSource = prof.buscaNomeProfessor(txtBuscaNome.Text).Tables[0];
-           LimpaCampos();
+
+            dataGridView1.DataSource = Professor.BuscaNomeProfessor(txtBuscaNome.Text).Tables[0];
+            LimpaCampos();
         }
-        
+
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
@@ -104,25 +107,25 @@ namespace WindowsFormsApplication
             prof.idade = Convert.ToInt32(txtIdade.Text);
             prof.sexo = Convert.ToChar(cmbSexo.Text);
             prof.Alterar();
-            dataGridView1.DataSource = prof.buscaNomeProfessor(txtBuscaNome.Text).Tables[0];
+            dataGridView1.DataSource = Professor.BuscaNomeProfessor(txtBuscaNome.Text).Tables[0];
             LimpaCampos();
         }
 
         private void FormCarregaDados_Layout(object sender, LayoutEventArgs e)
         {
-            dataGridView1.DataSource = prof.buscaNomeProfessor(txtBuscaNome.Text).Tables[0];
+            dataGridView1.DataSource = Professor.BuscaNomeProfessor(txtBuscaNome.Text).Tables[0];
         }
 
         private void txtBuscaNome_Leave(object sender, EventArgs e)
         {
             Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
-            dataGridView1.DataSource = prof.buscaNomeProfessor(txtBuscaNome.Text).Tables[0];
+            dataGridView1.DataSource = Professor.BuscaNomeProfessor(txtBuscaNome.Text).Tables[0];
         }
 
         private void txtBuscaNome_Enter(object sender, EventArgs e)
         {
             Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
-            dataGridView1.DataSource = prof.buscaNomeProfessor(txtBuscaNome.Text).Tables[0];
+            dataGridView1.DataSource = Professor.BuscaNomeProfessor(txtBuscaNome.Text).Tables[0];
         }
 
         private void btnLimparCampos_Click(object sender, EventArgs e)
