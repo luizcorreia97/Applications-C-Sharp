@@ -18,73 +18,66 @@ namespace Minhas_Classes
         public int idMateria { get; set; }
 
         // String de conexão com o banco
-        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=Facear;Integrated Security=True");
+        private static SqlConnection _con = new SqlConnection("Data Source=.;Initial Catalog=Facear;Integrated Security=True");
+        // private static SqlConnection _con = new SqlConnection(@"Data Source=GRANOLAPPATRICK\SQLEXPRESS;Initial Catalog=Facear2;User ID=sa;Password=patrigongl");
 
         // Método Salvar
         public void Salvar()
         {
-            string comando_sql = "insert into professor values ('" + this.nome + "', " + this.idade + ", '" + this.sexo + "')";
-            SqlCommand comando = new SqlCommand(comando_sql, con);
-            con.Open();
+            var comandoSql = "insert into professor values ('" + this.nome + "', " + this.idade + ", '" + this.sexo + "')";
+            var comando = new SqlCommand(comandoSql, _con);
+            _con.Open();
             comando.ExecuteNonQuery();
             //int id = Convert.ToInt32(comando.ExecuteScalar());
-            con.Close();
+            _con.Close();
         }
 
-        public int BuscaIdProfessor()
+        public static int BuscaIdProfessor()
         {
-            SqlCommand comando = new SqlCommand("select max(idprofessor) from professor", con);
-            con.Open();
-            int id = (int)comando.ExecuteScalar();
+            var comando = new SqlCommand("select max(idprofessor) from professor", _con);
+            _con.Open();
+            var id = (int)comando.ExecuteScalar();
+            _con.Close();
             return id;
-            
         }
 
         // Método Alterar
         public void Alterar()
         {
-            string comando_sql = "update professor set nome = '" + this.nome + "', idade = " + this.idade + ", sexo = '" + this.sexo + "' where idprofessor = " + this.idProfessor;
-            SqlCommand comando = new SqlCommand(comando_sql, con);
-            con.Open();
+            var comandoSql = "update professor set nome = '" + this.nome + "', idade = " + this.idade + ", sexo = '" + this.sexo + "' where idprofessor = " + this.idProfessor;
+            var comando = new SqlCommand(comandoSql, _con);
+            _con.Open();
             comando.ExecuteNonQuery();
-            con.Close();
+            _con.Close();
         }
 
         // Método Deletar
         public void Deletar()
         {
-            string comando_sql = "delete from professor where idprofessor = " + this.idProfessor;
-            SqlCommand comando = new SqlCommand(comando_sql, con);
-            con.Open();
+            var comandoSql = "delete from professor where idprofessor = " + this.idProfessor;
+            var comando = new SqlCommand(comandoSql, _con);
+            _con.Open();
             comando.ExecuteNonQuery();
-            con.Close();
+            _con.Close();
         }
 
         // Método Buscar
         public DataSet Buscar()
         {
-            DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select * from professor order by idprofessor asc", con);
-            SqlDataAdapter da = new SqlDataAdapter(comando);
+            var ds = new DataSet();
+            var comando = new SqlCommand("select * from professor order by idprofessor asc", _con);
+            var da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
         }
 
         // Método Totalizador
-        public int totalProfessor()
+        public int TotalProfessor()
         {
-            SqlCommand comando = new SqlCommand("select count(*) from professor", con);
-            con.Open();
-            int qtd = (int)comando.ExecuteScalar();
-            return qtd;
-        }
-
-        // Método Mostrar Sequence ID
-        public int mostraID()
-        {
-            SqlCommand comando = new SqlCommand("select max(idprofessor)+1 from professor", con);
-            con.Open();
-            int qtd = (int)comando.ExecuteScalar();
+            var comando = new SqlCommand("select count(*) from professor", _con);
+            _con.Open();
+            var qtd = (int)comando.ExecuteScalar();
+            _con.Close();
             return qtd;
         }
 
@@ -92,41 +85,39 @@ namespace Minhas_Classes
         public DataSet buscaProfessor()
         {
 
-            DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("busca_professor", con);
-            comando.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter da = new SqlDataAdapter(comando);
+            var ds = new DataSet();
+            var comando = new SqlCommand("busca_professor", _con) { CommandType = CommandType.StoredProcedure };
+            var da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
         }
 
         // Método Buscando da Procedure com Like no Nome do Professor
-        public DataSet buscaNomeProfessor(string nome)
+        public static DataSet BuscaNomeProfessor(string nome)
         {
-            DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("buscanomeprofessor", con);
-            comando.CommandType = CommandType.StoredProcedure;
+            var ds = new DataSet();
+            var comando = new SqlCommand("buscanomeprofessor", _con) { CommandType = CommandType.StoredProcedure };
             comando.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
             //caso tenha novos parâmetros só adiciona-los aqui.
-            SqlDataAdapter da = new SqlDataAdapter(comando);
+            var da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
         }
-        
+
         public DataSet BuscarPorSexo(string sexo)
         {
-            DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select * from professor where sexo in ('" + sexo + "')", con);
-            SqlDataAdapter da = new SqlDataAdapter(comando);
+            var ds = new DataSet();
+            var comando = new SqlCommand("select * from professor where sexo in ('" + sexo + "')", _con);
+            var da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
         }
 
         public DataSet BuscarPorIdade(string idade)
         {
-            DataSet ds = new DataSet();
-            SqlCommand comando = new SqlCommand("select * from professor where idade " + idade + "", con);
-            SqlDataAdapter da = new SqlDataAdapter(comando);
+            var ds = new DataSet();
+            var comando = new SqlCommand("select * from professor where idade " + idade + "", _con);
+            var da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
         }
@@ -134,10 +125,10 @@ namespace Minhas_Classes
         // Método Buscar
         public DataSet BuscarMateria()
         {
-            DataSet ds = new DataSet();
+            var ds = new DataSet();
             //SqlCommand comando = new SqlCommand("select idmateria, concat(nome,' - ',idmateria) as nome from materia", con);
-            SqlCommand comando = new SqlCommand("select * from materia", con);
-            SqlDataAdapter da = new SqlDataAdapter(comando);
+            var comando = new SqlCommand("select * from materia", _con);
+            var da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
         }
@@ -145,27 +136,51 @@ namespace Minhas_Classes
         // Método Salvar Matéria do Professor
         public void SalvarMateriaProfessor()
         {
-            string comando_sql = "insert into materiaProfessor values (" + this.idProfessor + ", " + this.idMateria + ")";
-            SqlCommand comando = new SqlCommand(comando_sql, con);
-            con.Open();
+            var comandoSql = "insert into materiaProfessor values (" + this.idProfessor + ", " + this.idMateria + ")";
+            var comando = new SqlCommand(comandoSql, _con);
+            _con.Open();
             comando.ExecuteNonQuery();
-            con.Close();
+            _con.Close();
         }
-        
-        public DataTable buscaMateriaProfessor(int id)
+
+        public static HashSet<Professor> BuscaMateriaProfessor(int id)
         {
-            DataTable ds = new DataTable();
-            SqlCommand comando = new SqlCommand(
-            "select mp.idProfessor, m.idMateria, m.nome " +
-            "from professor p " +
-            "inner join MateriaProfessor mp on (mp.idProfessor = p.idProfessor) " +
-            "inner join materia m on (m.idMateria = mp.idMateria) " +
-            "where mp.idProfessor = " + id, con);
-            SqlDataAdapter da = new SqlDataAdapter(comando);
-            da.Fill(ds);
-            return ds;
+            var dtInput = new DataTable();
+            var comando = new SqlCommand(
+            "SELECT mp.idProfessor, m.idMateria, m.nome " +
+            "FROM professor p " +
+            "INNER JOIN MateriaProfessor mp ON (mp.idProfessor = p.idProfessor) " +
+            "INNER JOIN Materia m ON (m.idMateria = mp.idMateria) " +
+            "WHERE mp.idProfessor = " + id, _con);
+            var da = new SqlDataAdapter(comando);
+            da.Fill(dtInput);
+
+            // convertendo datatable para hashset (lista) de professor
+            var profList = new HashSet<Professor>();
+
+            foreach (DataRow dr in dtInput.Rows)
+            {
+                var newObj = new Professor
+                {
+                    idProfessor = Convert.ToInt32(dr["idProfessor"]),
+                    idMateria = Convert.ToInt32(dr["idMateria"]),
+                    nome = dr["nome"].ToString()
+                };
+
+                profList.Add(newObj);
+            }
+            return profList;
         }
-        
+
+        public void RemoveAllMaterias(int id)
+        {
+            var comandoSql = "DELETE FROM MateriaProfessor WHERE idProfessor = " + id;
+            var comando = new SqlCommand(comandoSql, _con);
+            _con.Open();
+            comando.ExecuteNonQuery();
+            _con.Close();
+        }
+
         //public List<Professor> retorna(int id)
         //{
         //    List<Professor> lista = new List<Professor>();
