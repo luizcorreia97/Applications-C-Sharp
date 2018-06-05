@@ -95,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cadastro.aspx" />
+    <Content Include="RecuperaCookie.aspx" />
+    <Content Include="Recupera_Cookie_Completo.aspx" />
+    <Content Include="SalvaCookie.aspx" />
     <Content Include="ListagemBootstrap.aspx" />
     <Content Include="Componentes.aspx" />
     <Content Include="packages.config" />
@@ -111,6 +114,7 @@
   <ItemGroup>
     <Content Include="Index.aspx" />
     <Content Include="ListagemProfessores.aspx" />
+    <Content Include="Salva_Cookie_Completo.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="CadastroBootstrap.aspx" />
@@ -125,6 +129,27 @@
     </Compile>
     <Compile Include="Cadastro.aspx.designer.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperaCookie.aspx.cs">
+      <DependentUpon>RecuperaCookie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperaCookie.aspx.designer.cs">
+      <DependentUpon>RecuperaCookie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recupera_Cookie_Completo.aspx.cs">
+      <DependentUpon>Recupera_Cookie_Completo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recupera_Cookie_Completo.aspx.designer.cs">
+      <DependentUpon>Recupera_Cookie_Completo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalvaCookie.aspx.cs">
+      <DependentUpon>SalvaCookie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalvaCookie.aspx.designer.cs">
+      <DependentUpon>SalvaCookie.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListagemBootstrap.aspx.cs">
       <DependentUpon>ListagemBootstrap.aspx</DependentUpon>
@@ -161,6 +186,13 @@
     </Compile>
     <Compile Include="CadastroBootstrap.aspx.designer.cs">
       <DependentUpon>CadastroBootstrap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Salva_Cookie_Completo.aspx.cs">
+      <DependentUpon>Salva_Cookie_Completo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Salva_Cookie_Completo.aspx.designer.cs">
+      <DependentUpon>Salva_Cookie_Completo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sessao.aspx.cs">
       <DependentUpon>Sessao.aspx</DependentUpon>

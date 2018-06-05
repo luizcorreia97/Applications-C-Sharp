@@ -121,7 +121,7 @@ namespace WebFormEstacionamento
             }
             if (e.Item.Cells[9].Text == "Finalizado")
             { 
-                    e.Item.Cells[9].BackColor = System.Drawing.Color.Green;
+                e.Item.Cells[9].BackColor = System.Drawing.Color.Green;
             }
 
         }

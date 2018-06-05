@@ -205,15 +205,15 @@ namespace ProfessoresWebForms
             if (e.CommandName.Equals("Delete"))
             {
                 //var item1 = e.Item.ToString();
-                var row = (Professor)e.Item.DataItem;
+                //var row = (Professor)e.Item.DataItem;
 
                 //Response.Write("<script>alert('selecteditem.id datagrid: " + item1 = + "')</script>");
                 //Response.Write("<script>alert('var item2 = e.Item.ItemIndex.ToString();: " + item2 + "')</script>");
                 //lista.RemoveAt(Convert.ToInt32(item2));
 
-                _lista = (HashSet<Professor>)Session["lista_de_materias"];
-                _lista.Remove(row);
-                Session["lista_de_materias"] = _lista;
+                //_lista = (HashSet<Professor>)Session["lista_de_materias"];
+                //_lista.Remove(row);
+                //Session["lista_de_materias"] = _lista;
 
             }
         }
@@ -222,6 +222,7 @@ namespace ProfessoresWebForms
         {
             if (e.CommandName.Equals("Delete"))
             {
+                //var materia = e.Item.Cells[0].Text;
                 var row = (Professor)e.Item.DataItem;
                 //Response.Write("<script>alert('Deletar item: " + row + "')</script>");
 

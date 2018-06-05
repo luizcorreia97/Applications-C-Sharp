@@ -74,11 +74,12 @@ namespace ProfessoresWebForms
             if (e.Item.Cells[3].Text == "M")
             {
                 e.Item.Cells[3].Text = "Masculino";
-                //e.Item.Cells[2].Text = 
+                //e.Item.Cells[3].BackColor = System.Drawing.Color.Blue;
             }
             if (e.Item.Cells[3].Text == "F")
             {
                 e.Item.Cells[3].Text = "Feminino";
+                //e.Item.Cells[3].BackColor = System.Drawing.Color.Red;
             }
         }
 
@@ -104,8 +105,22 @@ namespace ProfessoresWebForms
 
         protected void gridProfessor_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
         {
-            gridProfessor.DataSource = prof.Buscar();
+            gridProfessor.CurrentPageIndex = e.NewPageIndex;
+            gridProfessor.DataSource = prof.BuscarPorSexo(rbListSexo.SelectedValue);
             gridProfessor.DataBind();
+        }
+
+        protected void gridProfessor_ItemCreated(object sender, DataGridItemEventArgs e)
+        {
+            //if (e.Item.Cells[3].Text == "M")
+            //{
+            //    e.Item.Cells[3].Attributes.Add("onmouseover", "this.style.backgroundColor='blue'");
+            //}
+            //if (e.Item.Cells[3].Text == "F")
+            //{
+            //    e.Item.Cells[3].Attributes.Add("onmouseover", "this.style.backgroundColor='red'");
+            //}
+            //e.Item.Cells[3].Attributes.Add("onmouseout", "this.style.backgroundColor='white'");
         }
 
         //protected void rbList_SelectedIndexChanged(object sender, EventArgs e)

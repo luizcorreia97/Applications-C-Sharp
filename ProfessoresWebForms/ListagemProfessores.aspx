@@ -32,7 +32,7 @@
             <br />
             <br />
         </div>
-        <asp:DataGrid ID="gridProfessor" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="325px" OnItemCommand="gridProfessor_ItemCommand" Width="590px" AutoGenerateColumns="False" OnItemDataBound="gridProfessor_ItemDataBound" OnPageIndexChanged="gridProfessor_PageIndexChanged" PageSize="3">
+        <asp:DataGrid ID="gridProfessor" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="325px" OnItemCommand="gridProfessor_ItemCommand" Width="590px" AutoGenerateColumns="False" OnItemDataBound="gridProfessor_ItemDataBound" OnPageIndexChanged="gridProfessor_PageIndexChanged" PageSize="3" AllowPaging="True" OnItemCreated="gridProfessor_ItemCreated">
             <AlternatingItemStyle BackColor="White" />
             <Columns>
                 <asp:BoundColumn DataField="idProfessor" HeaderText="ID"></asp:BoundColumn>

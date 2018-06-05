@@ -65,7 +65,7 @@ namespace Minhas_Classes
         public DataSet Buscar()
         {
             var ds = new DataSet();
-            var comando = new SqlCommand("select * from professor order by idprofessor asc", _con);
+            var comando = new SqlCommand("select * from professor order by idprofessor desc", _con);
             var da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
@@ -107,7 +107,7 @@ namespace Minhas_Classes
         public DataSet BuscarPorSexo(string sexo)
         {
             var ds = new DataSet();
-            var comando = new SqlCommand("select * from professor where sexo in ('" + sexo + "')", _con);
+            var comando = new SqlCommand("select * from professor where sexo in ('" + sexo + "') order by idprofessor desc", _con);
             var da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
@@ -116,7 +116,7 @@ namespace Minhas_Classes
         public DataSet BuscarPorIdade(string idade)
         {
             var ds = new DataSet();
-            var comando = new SqlCommand("select * from professor where idade " + idade + "", _con);
+            var comando = new SqlCommand("select * from professor where idade " + idade + " order by idprofessor desc", _con);
             var da = new SqlDataAdapter(comando);
             da.Fill(ds);
             return ds;
@@ -180,20 +180,5 @@ namespace Minhas_Classes
             comando.ExecuteNonQuery();
             _con.Close();
         }
-
-        //public List<Professor> retorna(int id)
-        //{
-        //    List<Professor> lista = new List<Professor>();
-
-        //    SqlCommand comando = new SqlCommand(
-        //    "select mp.idProfessor, m.idMateria, m.nome " +
-        //    "from professor p " +
-        //    "inner join MateriaProfessor mp on (mp.idProfessor = p.idProfessor) " +
-        //    "inner join materia m on (m.idMateria = mp.idMateria) " +
-        //    "where mp.idProfessor = " + id, con);
-        //    SqlDataAdapter da = new SqlDataAdapter(comando);
-        //    da.Fill(lista);
-        //    return lista;
-        //}
     }
 }

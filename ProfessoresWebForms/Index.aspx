@@ -69,6 +69,7 @@
             <Columns>
                 <asp:BoundColumn DataField="idMateria" HeaderText="Código"></asp:BoundColumn>
                 <asp:BoundColumn DataField="nome" HeaderText="Matéria"></asp:BoundColumn>
+                <asp:ButtonColumn CommandName="Delete" Text="Delete"></asp:ButtonColumn>
             </Columns>
             <EditItemStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
