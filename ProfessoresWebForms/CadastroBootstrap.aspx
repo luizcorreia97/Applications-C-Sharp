@@ -37,43 +37,45 @@
          </div>
       </div>
       <form id="form1" runat="server" style="margin-top: 80px;">
-         <div class="col-md-11">
-             <div class="row">
-                <div class="col-xs-10 col-md-10">
-                  <h2 class="form-signin-heading">Cadastro</h2>
+         <div class="container">
+             <div class="col-md-11">
+                 <div class="row">
+                    <div class="col-xs-10 col-md-10">
+                      <h2 class="form-signin-heading">Cadastro</h2>
+                     </div>
                  </div>
-             </div>
-             <br />
-             <div class="row">
-                 <div class="col-xs-10 col-md-8">
-                      <label>Nome</label>
-                      <asp:TextBox ID="txtNome" runat="server" CssClass="form-control" placeholder="Digite o nome" required />
+                 <br />
+                 <div class="row">
+                     <div class="col-xs-10 col-md-8">
+                          <label>Nome</label>
+                          <asp:TextBox ID="txtNome" runat="server" CssClass="form-control" placeholder="Digite o nome" required />
+                     </div>
                  </div>
-             </div>
-             <br />
-             <div class="row">
-                 <div class="col-xs-10 col-md-4">
-                       <label>Idade</label>
-                        <asp:TextBox ID="txtIdade" runat="server" TextMode="Number" CssClass="form-control" placeholder="Digite a idade" required />
+                 <br />
+                 <div class="row">
+                     <div class="col-xs-10 col-md-4">
+                           <label>Idade</label>
+                            <asp:TextBox ID="txtIdade" runat="server" TextMode="Number" CssClass="form-control" placeholder="Digite a idade" required />
+                     </div>
+                     <div class="col-xs-10 col-md-3">
+                        <label for="txtPassword">Sexo</label>
+                        <asp:DropDownList ID="drdSexo" CssClass="form-control" runat="server">
+                        <asp:ListItem Value="M">Masculino</asp:ListItem>
+                        <asp:ListItem Value="F">Feminino</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                    <div class="col-xs-10 col-md-1">
+                       <label style="display: block"> &nbsp;</label>
+                       <asp:Button ID="Button1" Text="Salvar" style="float: right;" runat="server" Class="btn btn-success" />
+                    </div>
                  </div>
-                 <div class="col-xs-10 col-md-3">
-                    <label for="txtPassword">Sexo</label>
-                    <asp:DropDownList ID="drdSexo" CssClass="form-control" runat="server">
-                    <asp:ListItem Value="M">Masculino</asp:ListItem>
-                    <asp:ListItem Value="F">Feminino</asp:ListItem>
-                    </asp:DropDownList>
+                <br />
+                <div id="dvMessage" runat="server" visible="false" class="alert alert-danger">
+                   <strong>Error!</strong>
+                   <asp:Label ID="lblMessage" runat="server" />
                 </div>
-                <div class="col-xs-10 col-md-1">
-                   <label style="display: block"> &nbsp;</label>
-                   <asp:Button ID="Button1" Text="Salvar" style="float: right;" runat="server" Class="btn btn-success" />
-                </div>
              </div>
-            <br />
-            <div id="dvMessage" runat="server" visible="false" class="alert alert-danger">
-               <strong>Error!</strong>
-               <asp:Label ID="lblMessage" runat="server" />
-            </div>
-         </div>
+          </div>
       </form>
       <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
          asp-fallback-src="~/lib/jquery/dist/jquery.min.js"

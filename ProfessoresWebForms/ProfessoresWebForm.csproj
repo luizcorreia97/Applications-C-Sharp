@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cadastro.aspx" />
+    <Content Include="LoginCookie.aspx" />
     <Content Include="RecuperaCookie.aspx" />
     <Content Include="Recupera_Cookie_Completo.aspx" />
     <Content Include="SalvaCookie.aspx" />
@@ -129,6 +130,14 @@
     </Compile>
     <Compile Include="Cadastro.aspx.designer.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Criptografia.cs" />
+    <Compile Include="LoginCookie.aspx.cs">
+      <DependentUpon>LoginCookie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginCookie.aspx.designer.cs">
+      <DependentUpon>LoginCookie.aspx</DependentUpon>
     </Compile>
     <Compile Include="RecuperaCookie.aspx.cs">
       <DependentUpon>RecuperaCookie.aspx</DependentUpon>

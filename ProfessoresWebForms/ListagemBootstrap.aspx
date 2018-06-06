@@ -39,55 +39,57 @@
          </div>
       </div>
       <form id="form1" runat="server" style="margin-top: 80px;">
-         <div class="col-md-11">
-             <div class="row">
-                <div class="col-xs-10 col-md-5">
-                  <h2 class="form-signin-heading">Listagem</h2>
+         <div class="container">
+            <div class="col-md-11">
+                 <div class="row">
+                    <div class="col-xs-10 col-md-5">
+                      <h2 class="form-signin-heading">Listagem</h2>
+                     </div>
+                     <div class="col-xs-10 col-md-2" style="margin-top: 20px;">
+                       <asp:Button ID="Button1" Text="Adicionar" style="float: right;" runat="server" Class="btn btn-primary" />
+                    </div>
                  </div>
-                 <div class="col-xs-10 col-md-2" style="margin-top: 20px;">
-                   <asp:Button ID="Button1" Text="Adicionar" style="float: right;" runat="server" Class="btn btn-primary" />
+                 <br />
+                 <div class="row">
+                     <div class="col-xs-10 col-md-8">
+                         <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">ID</th>
+                              <th scope="col">Nome</th>
+                              <th scope="col">Idade</th>
+                              <th scope="col">Sexo</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Rodrigo</td>
+                              <td>33</td>
+                              <td>Masculino</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Helen</td>
+                              <td>40</td>
+                              <td>Feminino</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Marcão</td>
+                              <td>45</td>
+                              <td>Masculino</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                     </div>
+                 </div>
+                 <br />
+                 <div id="dvMessage" runat="server" visible="false" class="alert alert-danger">
+                   <strong>Error!</strong>
+                   <asp:Label ID="lblMessage" runat="server" />
                 </div>
              </div>
-             <br />
-             <div class="row">
-                 <div class="col-xs-10 col-md-8">
-                     <table class="table">
-                      <thead>
-                        <tr>
-                          <th scope="col">ID</th>
-                          <th scope="col">Nome</th>
-                          <th scope="col">Idade</th>
-                          <th scope="col">Sexo</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Rodrigo</td>
-                          <td>33</td>
-                          <td>Masculino</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Helen</td>
-                          <td>40</td>
-                          <td>Feminino</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Marcão</td>
-                          <td>45</td>
-                          <td>Masculino</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                 </div>
-             </div>
-             <br />
-             <div id="dvMessage" runat="server" visible="false" class="alert alert-danger">
-               <strong>Error!</strong>
-               <asp:Label ID="lblMessage" runat="server" />
-            </div>
          </div>
       </form>
       <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
