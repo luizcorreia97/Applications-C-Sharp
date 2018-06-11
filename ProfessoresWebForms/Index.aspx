@@ -4,80 +4,111 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Professores</title>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="https://avatars0.githubusercontent.com/u/22556132?s=460&v=4" />
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" />
 </head>
 <body>
     <form id="form2" runat="server">
-        <div>
-            CADASTRAR/ALTERAR PROFESSOR<br />
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand"href="~/LoginCookie.aspx">Professores</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/ListagemProfessores.aspx">Listagem</a></li>
+                        <li><a runat="server" href="~/Index.aspx">Adicionar</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <hr />
-        <div>
-            <asp:Button ID="btnVoltar" runat="server" OnClick="btnVoltar_Click" Text="Voltar" />
+        <div class="container">
+           <h1 style="margin-top: 60px;">Gerenciar Professor</h1>
+                <%--<asp:Button ID="btnVoltar" runat="server" OnClick="btnVoltar_Click" Text="Voltar" />--%>
             <br />
             <br />
-            <asp:Label ID="Label1" runat="server" Text="ID:"></asp:Label>
-            <asp:TextBox ID="txtID" runat="server" Style="margin-left: 32px" Width="88px" Enabled="False"></asp:TextBox>
-            &nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label3" runat="server" Text="Nome:"></asp:Label>
-            <asp:TextBox ID="txtNome" runat="server" Width="380px" Style="margin-left: 6px"></asp:TextBox>
+            <div class="row">
+                <div class="col-md-1">
+                    <label>ID:</label>
+                    <asp:TextBox ID="txtID" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
+                </div>
+                <div class="col-md-7">
+                    <label>Nome:</label>
+                    <asp:TextBox ID="txtNome" runat="server" CssClass="form-control" Width="380px"></asp:TextBox>
+                </div>
+            </div>
             <br />
+            <div class="row">
+                <div class="col-md-1">
+                    <label>Idade:</label>
+                    <asp:TextBox ID="txtIdade" type="number" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="col-md-2">
+                    <label>Sexo:</label>
+                    <asp:DropDownList ID="DropDownSexo" runat="server" CssClass="form-control" Style="margin-left: 6px" Width="117px">
+                        <asp:ListItem Value="M">Masculino</asp:ListItem>
+                        <asp:ListItem Value="F">Feminino</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                <div class="col-md-3" style="margin-top: 25px; margin-left: -10px;"">
+                    <asp:Button ID="btnSalvar" runat="server" CssClass="btn btn-success" OnClick="btnSalvar_Click" Text="Salvar"/>
+                    <asp:Button ID="btnLimparCampos" CssClass="btn btn-warning" runat="server" OnClick="btnLimparCampos_Click" Text="Limpar Campos"/>
+                </div>
+            </div>
             <br />
-            <asp:Label ID="Label4" runat="server" Text="Idade:"></asp:Label>
-            &nbsp;<asp:TextBox ID="txtIdade" runat="server" Style="margin-left: 10px" Width="88px"></asp:TextBox>
-            &nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label2" runat="server" Text="Sexo:"></asp:Label>
-            &nbsp;<asp:DropDownList ID="DropDownSexo" runat="server" Style="margin-left: 6px" Width="117px">
-                <asp:ListItem Value="M">Masculino</asp:ListItem>
-                <asp:ListItem Value="F">Feminino</asp:ListItem>
-            </asp:DropDownList>
-            &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnSalvar" runat="server" OnClick="btnSalvar_Click" Text="Salvar" Width="100px" />
-            &nbsp;&nbsp;&nbsp;<asp:Button ID="btnLimparCampos" runat="server" OnClick="btnLimparCampos_Click" Text="Limpar Campos" Width="133px" />
-
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Matérias:</label>
+                    <asp:DropDownList ID="dropDownMaterias" runat="server" CssClass="form-control">
+                    </asp:DropDownList>
+                </div>
+                <div class="col-md-2" style="margin-top: 25px;">
+                    <asp:Button ID="btnAddMateria" runat="server" CssClass="btn btn-primary" OnClick="btnAddMateria_Click" Text="Adicionar"/>
+                </div>
+            </div>
+            
             <br />
-            <br />
-            <br />
-            Matérias:
-            <asp:DropDownList ID="dropDownMaterias" runat="server" Height="25px" Width="109px" Style="margin-bottom: 0px">
-            </asp:DropDownList>
-            &nbsp;<asp:Button ID="btnAddMateria" runat="server" OnClick="btnAddMateria_Click" Text="Adicionar" Width="88px" Style="height: 29px" />
-
-            <br />
-
-            <br />
+            <%--<asp:DataGrid ID="gridProfessor" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="273px" OnEditCommand="gridProfessor_EditCommand" OnItemCommand="gridProfessor_ItemCommand" OnItemDataBound="gridProfessor_ItemDataBound" PageSize="3" Width="679px">
+                <AlternatingItemStyle BackColor="White" />
+                <Columns>
+                    <asp:BoundColumn DataField="idProfessor" HeaderText="ID"></asp:BoundColumn>
+                    <asp:BoundColumn DataField="Nome" HeaderText="Nome"></asp:BoundColumn>
+                    <asp:BoundColumn DataField="Idade" HeaderText="Idade"></asp:BoundColumn>
+                    <asp:BoundColumn DataField="Sexo" HeaderText="Sexo"></asp:BoundColumn>
+                    <asp:EditCommandColumn CancelText="Cancel" EditText="Editar" HeaderText="Editar" UpdateText="Update"></asp:EditCommandColumn>
+                    <asp:ButtonColumn CommandName="Delete" HeaderText="Excluir" Text="Excluir"></asp:ButtonColumn>
+                </Columns>
+                <EditItemStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <ItemStyle BackColor="#E3EAEB" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <SelectedItemStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+            </asp:DataGrid>--%>
+            <asp:DataGrid ID="dgMaterias" runat="server" CssClass="table" CellPadding="4" ForeColor="#333333" GridLines="None" Height="157px" Width="324px" AutoGenerateColumns="False" OnItemCommand="dgMaterias_ItemCommand">
+                <AlternatingItemStyle BackColor="White" />
+                <Columns>
+                    <asp:BoundColumn DataField="idMateria" HeaderText="Código"></asp:BoundColumn>
+                    <asp:BoundColumn DataField="nome" HeaderText="Matéria"></asp:BoundColumn>
+                    <asp:ButtonColumn CommandName="Delete" Text="Excluir" HeaderText="Ação"></asp:ButtonColumn>
+                </Columns>
+                <EditItemStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <ItemStyle BackColor="#EFF3FB" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+            </asp:DataGrid>
         </div>
-        <%--<asp:DataGrid ID="gridProfessor" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="273px" OnEditCommand="gridProfessor_EditCommand" OnItemCommand="gridProfessor_ItemCommand" OnItemDataBound="gridProfessor_ItemDataBound" PageSize="3" Width="679px">
-            <AlternatingItemStyle BackColor="White" />
-            <Columns>
-                <asp:BoundColumn DataField="idProfessor" HeaderText="ID"></asp:BoundColumn>
-                <asp:BoundColumn DataField="Nome" HeaderText="Nome"></asp:BoundColumn>
-                <asp:BoundColumn DataField="Idade" HeaderText="Idade"></asp:BoundColumn>
-                <asp:BoundColumn DataField="Sexo" HeaderText="Sexo"></asp:BoundColumn>
-                <asp:EditCommandColumn CancelText="Cancel" EditText="Editar" HeaderText="Editar" UpdateText="Update"></asp:EditCommandColumn>
-                <asp:ButtonColumn CommandName="Delete" HeaderText="Excluir" Text="Excluir"></asp:ButtonColumn>
-            </Columns>
-            <EditItemStyle BackColor="#7C6F57" />
-            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <ItemStyle BackColor="#E3EAEB" />
-            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-            <SelectedItemStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-        </asp:DataGrid>--%>
-        <asp:DataGrid ID="dgMaterias" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="157px" Width="324px" AutoGenerateColumns="False" OnItemCommand="dgMaterias_ItemCommand">
-            <AlternatingItemStyle BackColor="White" />
-            <Columns>
-                <asp:BoundColumn DataField="idMateria" HeaderText="Código"></asp:BoundColumn>
-                <asp:BoundColumn DataField="nome" HeaderText="Matéria"></asp:BoundColumn>
-                <asp:ButtonColumn CommandName="Delete" Text="Delete"></asp:ButtonColumn>
-            </Columns>
-            <EditItemStyle BackColor="#2461BF" />
-            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <ItemStyle BackColor="#EFF3FB" />
-            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-            <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        </asp:DataGrid>
-    </form>
+     </form>   
 </body>
 </html>

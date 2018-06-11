@@ -47,7 +47,7 @@ namespace ProfessoresWebForms
                 }
             }
 
-            Response.Redirect("ListagemBootstrap.aspx");
+            Response.Redirect("ListagemProfessores.aspx");
         }
     }
 }

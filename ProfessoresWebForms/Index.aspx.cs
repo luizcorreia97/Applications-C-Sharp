@@ -1,6 +1,7 @@
 ﻿using Minhas_Classes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.UI.WebControls;
 
 namespace ProfessoresWebForms
@@ -15,6 +16,7 @@ namespace ProfessoresWebForms
 
         Minhas_Classes.Professor prof = new Minhas_Classes.Professor();
         private HashSet<Professor> _lista = new HashSet<Professor>();
+        Boolean controlEdit = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -200,38 +202,27 @@ namespace ProfessoresWebForms
             dgMaterias.DataBind();
         }
 
-        protected void gridArray_ItemCommand(object source, DataGridCommandEventArgs e)
-        {
-            if (e.CommandName.Equals("Delete"))
-            {
-                //var item1 = e.Item.ToString();
-                //var row = (Professor)e.Item.DataItem;
-
-                //Response.Write("<script>alert('selecteditem.id datagrid: " + item1 = + "')</script>");
-                //Response.Write("<script>alert('var item2 = e.Item.ItemIndex.ToString();: " + item2 + "')</script>");
-                //lista.RemoveAt(Convert.ToInt32(item2));
-
-                //_lista = (HashSet<Professor>)Session["lista_de_materias"];
-                //_lista.Remove(row);
-                //Session["lista_de_materias"] = _lista;
-
-            }
-        }
-
         protected void dgMaterias_ItemCommand(object source, DataGridCommandEventArgs e)
         {
             if (e.CommandName.Equals("Delete"))
             {
-                //var materia = e.Item.Cells[0].Text;
-                var row = (Professor)e.Item.DataItem;
-                //Response.Write("<script>alert('Deletar item: " + row + "')</script>");
-
+                //Response.Write("<script>alert('Deletar item posição: " + indexRow + "')</script>");
+                var indexRow = e.Item.ItemIndex;
                 _lista = (HashSet<Professor>)Session["lista_de_materias"];
-                _lista.Remove(row);
-                Session["lista_de_materias"] = _lista;
 
+                // transform hash on a list than you can manage with removeAt
+                var listOfHash = _lista.ToList();
+                listOfHash.RemoveAt(indexRow);
+
+                // clear the list and get the new hash with removed value
+                _lista.Clear();
+                _lista.UnionWith(listOfHash);
+
+                // update the lists
+                Session["lista_de_materias"] = _lista;
                 dgMaterias.DataSource = _lista;
                 dgMaterias.DataBind();
+                
             }
             //if (e.CommandName.Equals("Edit"))
             //{
