@@ -16,6 +16,8 @@ namespace Minhas_Classes
         public int idade { get; set; }
         public char sexo { get; set; }
         public int idMateria { get; set; }
+        public double nota1 { get; set; }
+        public double nota2 { get; set; }
 
         // String de conexão com o banco
         private static SqlConnection _con = new SqlConnection("Data Source=.;Initial Catalog=Facear;Integrated Security=True");
