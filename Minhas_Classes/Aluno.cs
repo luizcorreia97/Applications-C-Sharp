@@ -29,6 +29,7 @@ namespace Minhas_Classes
             SqlCommand comando = new SqlCommand(comando_sql, con);
             con.Open();
             comando.ExecuteNonQuery();
+            con.Close();
         }
 
         // Método Busca Máximo ID
@@ -37,6 +38,7 @@ namespace Minhas_Classes
             SqlCommand comando = new SqlCommand("select max(idaluno) from aluno", con);
             con.Open();
             int id = (int)comando.ExecuteScalar();
+            con.Close();
             return id;
         }
 
@@ -132,14 +134,13 @@ namespace Minhas_Classes
             SqlCommand comando = new SqlCommand("select count(*) from aluno", con);
             con.Open();
             int qtd = (int)comando.ExecuteScalar();
-            return qtd;
             con.Close();
+            return qtd;
         }
 
         // Método Buscando da Procedure
         public DataSet buscaAluno()
         {
-
             DataSet ds = new DataSet();
             SqlCommand comando = new SqlCommand("busca_aluno", con);
             comando.CommandType = CommandType.StoredProcedure;
